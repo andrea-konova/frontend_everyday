@@ -1,0 +1,120 @@
+/* settings */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+*:active, *:hover, *:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+:root {
+  --primary: #FF6464;
+  --secondary: #00A8CC;
+  --dark: #21243D;
+  --light: #8695A4;
+  --black: #000000;
+  --white: #ffffff;
+}
+html {
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+li {
+  list-style: none;
+}
+.container {
+  width: 95%;
+  max-width: 1152px;
+  margin: auto;
+}
+.row {
+  display: flex;
+}
+/* header*/
+.header {
+  padding-top: 1.75rem;
+  padding-bottom: 8.75rem;
+}
+.header__row {
+  align-items: center;
+  justify-content: flex-end;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 3.75rem;
+  padding: 0;
+  width: 240px;
+}
+.menu__item--link {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.3s;
+}
+.menu__item--link:hover {
+  color: var(--dark);
+}
+/* main */
+.main__description {
+  width: 50%;
+  max-width: 506px;
+}
+.main__title {
+  margin: 0 0 2.5rem 0;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 3.75rem;
+  color: var(--dark);
+}
+.main__text {
+  margin: 0 0 2.5rem 0;
+}
+.text {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--dark);
+}
+.button {
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--white);
+  background-color: var(--primary);
+  transition: all 0.3s;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: var(--dark);
+}
+.main__photo-wrap {
+  position: relative;
+  margin-left: 115px;
+  width: 243px;
+  height: 243px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+.main__photo-wrap::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: -5px;
+  width: 243px;
+  height: 243px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  z-index: -1;
+}
+.main__photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-position: 50% 50%;
+  object-fit: cover;
+}
