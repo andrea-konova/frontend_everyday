@@ -81,8 +81,7 @@ li {
 }
 /* header*/
 .header {
-  padding-top: 1.75rem;
-  padding-bottom: 8.75rem;
+  padding: 0 0 140px;
 }
 .header__row {
   align-items: center;
@@ -115,18 +114,18 @@ li {
   justify-content: space-between;
 }
 .main__description {
-  width: 50%;
+  width: 60%;
   max-width: 506px;
 }
 .main__title {
-  margin: 0 0 2.5rem 0;
+  margin: 15px 0 25px 0;
   font-weight: 700;
   font-size: 2.75rem;
   line-height: 3.75rem;
   color: var(--dark);
 }
 .main__text {
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 32px 0;
 }
 .text {
   font-weight: 400;
@@ -135,7 +134,7 @@ li {
   color: var(--dark);
 }
 .button {
-  padding: 1rem 1.25rem;
+  padding: 12px 20px;
   border: none;
   border-radius: 2px;
   font-weight: 500;
@@ -180,7 +179,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 20px 0 16px;
 }
 .card__row {
   display: flex;
@@ -190,15 +189,15 @@ li {
 .card {
   display: flex;
   flex-direction: column;
-  margin-bottom: 17px;
-  padding: 21px 24px;
-  width: 48%;
+  margin-bottom: 36px;
+  padding: 24px;
+  width: 49%;
   max-width: 418px;
   color: var(--dark);
   background-color: var(--white);
 }
 .card__title {
-  margin: 0 0 17px 0;
+  margin: 0 0 25px 0;
   font-weight: 700;
   font-size: 26px;
   line-height: 38px;
@@ -217,19 +216,19 @@ li {
 }
 .card__content {
   margin: 0;
-  padding-top: 11px;
+  padding-top: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
 /* works */
 .works {
-  padding-top: 16px;
+  padding-top: 30px;
 }
 .project {
   display: flex;
   justify-content: space-between;
-  margin: 31px 0;
+  margin: 25px 0 15px;
 }
 .project__image-wrap {
   margin-top: 10px;
@@ -277,7 +276,36 @@ li {
   line-height: 29px;
   color: var(--light);
 }
+.project__content {
+  padding-top: 5px;
+}
 .line {
   margin: 0;
   color: var(--light);
+}
+/* footer */
+.footer {
+  padding: 134px 0 52px;
+}
+.footer__row {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.social__links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.social__item {
+  margin: 0 17px;
+  width: 30px;
+  height: 30px;
+}
+.footer__copyright {
+  margin: 26px 0 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--dark);
 }
