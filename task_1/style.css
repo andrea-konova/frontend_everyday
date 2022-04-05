@@ -206,6 +206,10 @@ li {
   font-size: 26px;
   line-height: 38px;
 }
+.title-link {
+  text-decoration: none;
+  color: var(--dark);
+}
 .card__info {
   display: flex;
 }
@@ -262,6 +266,7 @@ li {
 }
 .project__info {
   display: flex;
+  align-items: center;
   margin: 16px 0;
 }
 .project__info-year {
