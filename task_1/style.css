@@ -209,6 +209,11 @@ li {
 .title-link {
   text-decoration: none;
   color: var(--dark);
+  transition: color 0.3s;
+}
+.title-link:hover {
+  text-decoration: none;
+  color: var(--light);
 }
 .card__info {
   display: flex;
@@ -310,6 +315,12 @@ li {
   margin: 0 17px;
   width: 30px;
   height: 30px;
+}
+.social__item-link {
+  transition: all 0.3s;
+}
+.social__item-link:hover {
+  filter: contrast(180);
 }
 .footer__copyright {
   margin: 26px 0 0;
