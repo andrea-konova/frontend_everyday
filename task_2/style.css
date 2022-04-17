@@ -259,6 +259,39 @@ li {
 .card__link:hover {
   text-shadow: 0 0 .7px var(--primary), 0 0 .7px var(--primary);
 }
+/* technology */
+.technology__card {
+  width: 25%;
+  max-width: 250px;
+}
+.technology__card-number {
+  margin: 0;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 120px;
+  text-align: center;
+  color: rgba(16, 16, 16, 0.08);
+}
+.technology__card-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -55px;
+  width: 60%;
+  max-width: 190px;
+  text-align: center;
+}
+.technology__link-wrap {
+  margin-bottom: 10px;
+  width: 70px;
+  height: 70px;
+}
+.technology__link-img {
+  object-fit: none;
+}
+.technology__card-text {
+  margin: 10px 0 0;
+}
 /* download */
 .download {
   width: 100%;
