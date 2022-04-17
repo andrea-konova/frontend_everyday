@@ -12,31 +12,31 @@
 </head>
 <body>
   <section class="hero">
-    <header class="header">
+    <header class="header" id="overview">
       <div class="container">
         <div class="row header__row">
-          <div class="navigation__logo logo">
+          <a href="#overview" class="navigation__logo logo">
             <div class="logo__img-wrap">
               <img src="image/svg/cloud_logo.svg" alt="cloud" class="logo__img">
             </div>
             <p class="logo__text text--white">CloudBudget</p>
-          </div>
+          </a>
           <nav class="navigation navigation-hide">
             <ul class="menu">
               <li class="menu__item">
-                <a href="#works" class="menu__item--link">OVERVIEW</a>
+                <a href="#overview" class="menu__item--link">OVERVIEW</a>
               </li>
               <li class="menu__item">
-                <a href="#posts" class="menu__item--link">FEATURES</a>
+                <a href="#features" class="menu__item--link">FEATURES</a>
               </li>
               <li class="menu__item">
-                <a href="#contacts" class="menu__item--link">TECHNOLOGY</a>
+                <a href="#technology" class="menu__item--link">TECHNOLOGY</a>
               </li>
               <li class="menu__item">
-                <a href="#contacts" class="menu__item--link">CONTACT</a>
+                <a href="#contact" class="menu__item--link">CONTACT</a>
               </li>
               <li class="menu__item">
-                <a href="#contacts" class="menu__item--link">Sign up</a>
+                <a href="#" class="menu__item--link">Sign up</a>
               </li>
             </ul>
           </nav>
@@ -71,7 +71,7 @@
       </div>
     </div>
   </section>
-  <section class="features">
+  <section class="features" id="features">
     <div class="container">
       <h2 class="section-title section-title--center">Features</h2>
       <div class="row features__row">
@@ -108,7 +108,7 @@
       </div>
     </div>
   </section>
-  <section class="technology">
+  <section class="technology" id="technology">
     <div class="container">
       <h2 class="section-title section-title--center">Technology</h2>
       <div class="row features__row">
@@ -187,7 +187,7 @@
       </div>
     </div>
   </section>
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="container">
       <div class="content contact__content">
         <div class="content__description">
@@ -209,32 +209,64 @@
   <footer class="footer">
     <div class="container">
       <div class="row footer__row">
-        <!-- <div class="footer__social social" id="contacts">
-          <ul class="social__links">
-            <li class="social__item">
-              <a href="#" class="social__item-link">
-                <img src="svg/fb.svg" alt="fb">
-              </a>
+        <div class="footer__column column">
+          <h4 class="footer__title">Address</h4>
+          <p class="footer__text">Pipang Ltd, Griva Digeni,</p>
+          <p class="footer__text">81-83 Jacovides Tower, 1st Floor</p>
+          <p class="footer__text">1090 Picosia USA</p>
+        </div>
+        <div class="footer__column column">
+          <h4 class="footer__title">Services</h4>
+          <ul class="footer__menu">
+            <li class="footer__menu-item">
+              <a href="#overview" class="footer__menu-link">overview</a>
             </li>
-            <li class="social__item">
-              <a href="#" class="social__item-link">
-                <img src="svg/insta.svg" alt="Instagram">
-              </a>
+            <li class="footer__menu-item">
+              <a href="#features" class="footer__menu-link">features</a>
             </li>
-            <li class="social__item">
-              <a href="#" class="social__item-link">
-                <img src="svg/twitter.svg" alt="twitter">
-              </a>
+            <li class="footer__menu-item">
+              <a href="#technology" class="footer__menu-link">technology</a>
             </li>
-            <li class="social__item">
-              <a href="#" class="social__item-link">
-                <img src="svg/Linkedin.svg" alt="Linkedin">
-              </a>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Terms & Conditions</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#" class="footer__menu-link">Privecy</a>
             </li>
           </ul>
         </div>
-        <p class="footer__copyright">Copyright ©2020 All rights reserved</p>
-      </div> -->
+        <div class="footer__column column">
+          <h4 class="footer__title">Get in Touch</h4>
+          <div class="footer__links-wrap">
+            <a href="mailto:info@cloudbudget.com" class="footer__link footer__text">info@cloudbudget.com</a>
+            <a href="tel:18447217120" class="footer__link footer__text">+1 844-721-7120</a>
+            <ul class="social__links">
+              <li class="social__item">
+                <a href="#" class="social__item-link">
+                  <img src="image/svg/feather-facebook.svg" alt="fb">
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="social__item-link">
+                  <img src="image/svg/feather-twitter.svg" alt="twitter">
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="social__item-link">
+                  <img src="image/svg/feather-linkedin.svg" alt="Linkedin">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__column column">
+          <h4 class="footer__title">We Support</h4>
+          <div class="content__img-wrap footer__img-wrap">
+            <img src="image/img/secure.png" alt=secure" class="content__img footer__img">
+          </div>
+        </div>
+      </div>
+      <p class="footer__copyright footer__text">Copyright 2021 CloudBudget</p>
     </div>
   </footer>
   <script src="script.js"></script>
