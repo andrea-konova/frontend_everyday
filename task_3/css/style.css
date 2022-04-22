@@ -1,0 +1,33 @@
+/* settings */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+*:active, *:hover, *:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+:root {
+  --orange: #FE753F;
+  --text-dark: #030A1B;
+  --text-dark-a: rgba(3, 10, 27, 0.7);
+  --bg-light: #F9F9F9;
+  --bg-blue: #2E6EFF;
+  --black: #000000;
+  --white: #ffffff;
+}
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.container {
+  width: 95%;
+  max-width: 1150px;
+  margin: auto;
+}
