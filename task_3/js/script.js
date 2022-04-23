@@ -12,3 +12,15 @@ const burgerMenu = () => {
 };
 
 burgerMenu();
+
+const partnersSlider = new Swiper('.partners-slider', {
+  autoplay: {
+    delay: 3000,
+  },
+
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 5,
+
+
+});
