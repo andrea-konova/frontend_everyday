@@ -12,7 +12,102 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+  <header class="header" id="home">
+    <div class="container">
+      <div class="row header__row">
+        <a href="#home" class="navigation__logo logo">
+          <div class="logo__img-wrap">
+            <img src="image/svg/logo.svg" alt="logo" class="logo__img">
+          </div>
+        </a>
+        <div class="burger-wrap burger-wrap-hide">
+          <nav class="navigation">
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="#overview" class="menu__item--link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="#features" class="menu__item--link">Properties</a>
+              </li>
+              <li class="menu__item">
+                <a href="#technology" class="menu__item--link">About us</a>
+              </li>
+              <li class="menu__item">
+                <a href="#contact" class="menu__item--link">Blog</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="button login-button">Contact us</button>
+        </div>
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="row main__row">
+        <div class="main__description">
+          <h1 class="main__title">Find the perfect place to stay with your family</h1>
+          <p class="main__text text">Buying a home is a life-changing experience, so shouldn’t your real estate agent be a life changer.</p>
+          <div class="tabs">
+            <input type="radio" name="tab-btn" id="tab-btn-1" class="radio-btn" value="" checked>
+            <label for="tab-btn-1" class="label">Buy</label>
+            <input type="radio" name="tab-btn" id="tab-btn-2" class="radio-btn" value="">
+            <label for="tab-btn-2" class="label">Rent</label>
+            <input type="radio" name="tab-btn" id="tab-btn-3" class="radio-btn" value="">
+            <label for="tab-btn-3" class="label">Sell</label>
+            <div id="content-1" class="content">
+              <div class="content-wrap">
+                <div class="content__group">
+                  <select name="location" id="buy-location" class="tabs__select">
+                    <option disabled selected>Location</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="London">London</option>
+                    <option value="Paris">Paris</option>
+                  </select>
+                  <p id="buy-location-value" class="tabs__select--value">Dhaka</p>
+                </div>
+                <span class="divider"></span>
+                <div class="content__group">
+                  <select name="property-type" id="buy-property-type" class="tabs__select">
+                    <option disabled selected>Property-type</option>
+                    <option value="Dhaka">Duplex</option>
+                    <option value="London">Townhouse</option>
+                    <option value="Paris">Penthouse</option>
+                  </select>
+                  <p id="buy-location-value" class="tabs__select--value">Duplex</p>
+                </div>
+                <span class="divider"></span>
+                <div class="content__group">
+                  <select name="price" id="buy-price" class="tabs__select">
+                    <option disabled selected>Price</option>
+                    <option value="Dhaka">$1000-$4000</option>
+                    <option value="London">$4000-$8000</option>
+                    <option value="Paris">$8000-$10000</option>
+                  </select>
+                  <p id="buy-location-value" class="tabs__select--value">$4000-$8000</p>
+                </div>
+                <button class="button tabs-button">Search</button>
+              </div>
+            </div>
+            <div id="content-2" class="content">
+              Содержимое 2...
+            </div>
+            <div id="content-3" class="content">
+              Содержимое 3...
+            </div>
+          </div>
+        </div>
+        <div class="main__img-wrap">
+          <img src="image/img/main-img.jpg" alt="main-image" class="main__img">
+        </div>
+      </div>
+    </div>
+  </main>
   <script src="js/script.js"></script>
 </body>
 </html>
