@@ -13,14 +13,36 @@ const burgerMenu = () => {
 
 burgerMenu();
 
-const partnersSlider = new Swiper('.partners-slider', {
-  autoplay: {
-    delay: 3000,
-  },
+const reviewsSwiper = new Swiper('.reviews-swiper', {
 
   direction: 'horizontal',
   loop: true,
-  slidesPerView: 5,
+  slidesPerView: 2,
+  spaceBetween: 30,
 
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
 
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 50
+    },
+    760: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    }
+  }
 });
