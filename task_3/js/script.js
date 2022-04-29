@@ -4,14 +4,24 @@ const burgerMenu = () => {
     header = document.querySelector('.header');
 
   header.addEventListener('click', (e) => {
-		if (e.target.matches(".menu__item--link") || e.target.matches(".burger") || e.target.matches(".burger span") || e.target.matches(".login-button")) {
-      burgerBtn.classList.toggle("burger--active");
+		if (e.target.matches('.menu__item--link') || e.target.matches('.burger') || e.target.matches('.burger span') || e.target.matches('.login-button')) {
+      burgerBtn.classList.toggle('burger--active');
       headerMenu.classList.toggle('burger-wrap-hide');
     }
 	});
 };
 
 burgerMenu();
+
+const likedProperty = () => {
+  const heartIcon = document.querySelector('.card-title__heart');
+
+  heartIcon.addEventListener('click', () => {
+    heartIcon.classList.toggle('heart-active');
+  });
+};
+
+likedProperty();
 
 const reviewsSwiper = new Swiper('.reviews-swiper', {
 
