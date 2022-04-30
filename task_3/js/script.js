@@ -14,10 +14,12 @@ const burgerMenu = () => {
 burgerMenu();
 
 const likedProperty = () => {
-  const heartIcon = document.querySelector('.card-title__heart');
+  const propertyWrap = document.querySelector('.property__wrapper');
 
-  heartIcon.addEventListener('click', () => {
-    heartIcon.classList.toggle('heart-active');
+    propertyWrap.addEventListener('click', (e) => {
+      if (e.target.matches('.card-title__heart')) {
+        e.target.classList.toggle('heart-active');
+      }
   });
 };
 
