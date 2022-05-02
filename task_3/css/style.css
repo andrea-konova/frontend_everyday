@@ -37,6 +37,7 @@ li {
 }
 .button {
   padding: 15px 30px;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -198,7 +199,7 @@ li {
   color: var(--text-dark);
 }
 .main__text {
-  margin: 30px 0 40px;
+  margin: 30px 0 55px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -227,7 +228,7 @@ li {
 }
 .tabs>div {
   display: none;
-  padding: 30px;
+  padding: 30px 26px 30px 30px;
   font-size: 16px;
 }
 #tab-btn-1:checked~#content-1,
@@ -240,7 +241,7 @@ li {
   border-radius: 5px;
 }
 .label {
-  padding: 15px 22px;
+  padding: 15px 22px 15px 26px;
   cursor: pointer;
   font-weight: 500;
   font-size: 18px;
@@ -272,6 +273,9 @@ li {
   margin-bottom: 10px;
   padding-right: 10px;
   border: none;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -296,6 +300,8 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 15px 20px;
+  margin-left: 20px;
+  border-radius: 10px;
 }
 .tabs-button::before {
   content: '';
@@ -423,6 +429,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .details__price {
   font-weight: 600;
@@ -439,7 +446,7 @@ li {
   background-color: var(--bg-light);
 }
 .featured__text {
-  margin: 0 auto;
+  margin: 10px auto 0;
   width: 80%;
   max-width: 728px;
   color: var(--text-dark-a);
@@ -588,7 +595,7 @@ li {
   opacity: 0.1;
 }
 .subscribe__text {
-  margin: 0 auto;
+  margin: 10px auto 0;
   width: 80%;
   max-width: 635px;
   color: var(--white);
@@ -608,10 +615,15 @@ li {
 .subscribe-form__input {
   margin-left: 23px;
   border: none;
+  font-family: 'Poppins', sans-serif;
+}
+.subscribe-form__button {
+  padding: 15px 40px;
+  border-radius: 10px;
 }
 /* footer */
 .footer {
-  padding-bottom: 192px;
+  padding-bottom: 165px;
 }
 .footer__row {
   display: flex;
@@ -622,6 +634,12 @@ li {
 .footer__logo-wrap {
   width: 220px;
   height: 57px;
+}
+.footer__column {
+  padding-top: 12px;
+}
+.logo__column {
+  padding-top: 0;
 }
 .footer-text {
   margin: 25px 0;
@@ -668,6 +686,8 @@ li {
   }
   .section-title__link {
     margin-bottom: 0;
+    font-size: 14px;
+    /* line-height: 18px; */
   }
   .section-title__row {
     padding-bottom: 40px;
