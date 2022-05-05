@@ -228,7 +228,7 @@ li {
 }
 .tabs>div {
   display: none;
-  padding: 30px 26px 30px 30px;
+  padding: 30px 26px;
   font-size: 16px;
 }
 #tab-btn-1:checked~#content-1,
@@ -269,17 +269,26 @@ li {
   align-items: flex-start;
   flex-direction: column;
 }
+.content__group--price {
+  min-width: 165px;
+}
 .tabs__select {
   margin-bottom: 10px;
-  padding-right: 10px;
+  padding-right: 20px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   border: none;
+  outline: none;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-weight: 400;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--text-dark-a);
+  background-image: url('../image/svg/select.svg');
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 .tabs__select--value {
   margin: 0;
@@ -872,7 +881,11 @@ li {
     font-size: 16px;
   }
   .tabs__select {
+    margin-bottom: 5px;
     font-size: 14px;
+  }
+  .tabs-button {
+    margin-left: 0;
   }
   .tabs__select--value {
     font-size: 18px;
@@ -883,7 +896,10 @@ li {
   }
   .content__group {
     width: 33%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+  }
+  .content__group--price {
+    min-width: auto;
   }
   .divider {
     display: none;
@@ -960,6 +976,10 @@ li {
   .tabs {
     width: 100%;
   }
+  .tabs__select--value {
+    font-size: 16px;
+    line-height: 20px;
+  }
   .content-wrap {
     flex-direction: column;
     align-items: flex-start;
@@ -982,7 +1002,7 @@ li {
   }
   .subscribe-form__input {
     margin: 0 0 10px 0;
-    padding-left: 45px;
+    padding-left: 35px;
   }
   .slide__quote-img-wrap {
     display: none;
