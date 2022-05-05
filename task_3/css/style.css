@@ -622,6 +622,7 @@ li {
   background-color: var(--white);
 }
 .subscribe-form__input {
+  width: 80%;
   margin-left: 23px;
   border: none;
   font-family: 'Poppins', sans-serif;
@@ -1001,8 +1002,8 @@ li {
     justify-content: center;
   }
   .subscribe-form__input {
+    width: 60%;
     margin: 0 0 10px 0;
-    padding-left: 35px;
   }
   .slide__quote-img-wrap {
     display: none;
