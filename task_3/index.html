@@ -64,102 +64,120 @@
             <label for="tab-btn-3" class="label">Sell</label>
             <div id="content-1" class="content">
               <div class="content-wrap">
-                <div class="content__group">
-                  <select name="location" id="buy-location" class="tabs__select">
-                    <option disabled selected>Location</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="London">London</option>
-                    <option value="Paris">Paris</option>
-                  </select>
-                  <p id="buy-location-value" class="tabs__select--value">Dhaka</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectLocationBuy" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Location</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="Dhaka">Dhaka</div>
+                        <div class="selectCustom-option" data-value="London">London</div>
+                        <div class="selectCustom-option" data-value="Paris">Paris</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">Dhaka</div>
+                  </div>
                 </div>
                 <span class="divider"></span>
-                <div class="content__group">
-                  <select name="property-type" id="buy-property-type" class="tabs__select">
-                    <option disabled selected>Property-type</option>
-                    <option value="Duplex">Duplex</option>
-                    <option value="Townhouse">Townhouse</option>
-                    <option value="Penthouse">Penthouse</option>
-                  </select>
-                  <p id="buy-property-value" class="tabs__select--value">Duplex</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectPropertyBuy" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Property-type</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="Duplex">Duplex</div>
+                        <div class="selectCustom-option" data-value="Townhouse">Townhouse</div>
+                        <div class="selectCustom-option" data-value="Penthouse">Penthouse</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">Duplex</div>
+                  </div>
                 </div>
                 <span class="divider"></span>
-                <div class="content__group content__group--price">
-                  <select name="price" id="buy-price" class="tabs__select">
-                    <option disabled selected>Price</option>
-                    <option value="$1000-$4000">$1000-$4000</option>
-                    <option value="$4000-$8000">$4000-$8000</option>
-                    <option value="$8000-$10000">$8000-$10000</option>
-                  </select>
-                  <p id="buy-price-value" class="tabs__select--value">$4000-$8000</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectPriceBuy content__group--price" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Price</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="$1000-$4000">$1000-$4000</div>
+                        <div class="selectCustom-option" data-value="$4000-$8000">$4000-$8000</div>
+                        <div class="selectCustom-option" data-value="$8000-$10000">$8000-$10000</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">$4000-$8000</div>
+                  </div>
                 </div>
                 <button class="button tabs-button">Search</button>
               </div>
             </div>
             <div id="content-2" class="content">
               <div class="content-wrap">
-                <div class="content__group">
-                  <select name="location" id="rent-location" class="tabs__select">
-                    <option disabled selected>Location</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="London">London</option>
-                    <option value="Paris">Paris</option>
-                  </select>
-                  <p id="rent-location-value" class="tabs__select--value">Dhaka</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectLocationRent" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Location</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="Dhaka">Dhaka</div>
+                        <div class="selectCustom-option" data-value="London">London</div>
+                        <div class="selectCustom-option" data-value="Paris">Paris</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">Dhaka</div>
+                  </div>
                 </div>
                 <span class="divider"></span>
-                <div class="content__group">
-                  <select name="property-type" id="rent-property-type" class="tabs__select">
-                    <option disabled selected>Property-type</option>
-                    <option value="Duplex">Duplex</option>
-                    <option value="Townhouse">Townhouse</option>
-                    <option value="Penthouse">Penthouse</option>
-                  </select>
-                  <p id="rent-property-value" class="tabs__select--value">Duplex</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectPropertyRent" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Property-type</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="Duplex">Duplex</div>
+                        <div class="selectCustom-option" data-value="Townhouse">Townhouse</div>
+                        <div class="selectCustom-option" data-value="Penthouse">Penthouse</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">Duplex</div>
+                  </div>
                 </div>
                 <span class="divider"></span>
-                <div class="content__group content__group--price">
-                  <select name="price" id="rent-price" class="tabs__select">
-                    <option disabled selected>Price</option>
-                    <option value="$1000-$4000">$1000-$4000</option>
-                    <option value="$4000-$8000">$4000-$8000</option>
-                    <option value="$8000-$10000">$8000-$10000</option>
-                  </select>
-                  <p id="rent-price-value" class="tabs__select--value">$4000-$8000</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectPriceRent content__group--price" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Price</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="$1000-$4000">$1000-$4000</div>
+                        <div class="selectCustom-option" data-value="$4000-$8000">$4000-$8000</div>
+                        <div class="selectCustom-option" data-value="$8000-$10000">$8000-$10000</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">$4000-$8000</div>
+                  </div>
                 </div>
                 <button class="button tabs-button">Search</button>
               </div>
             </div>
             <div id="content-3" class="content">
               <div class="content-wrap">
-                <div class="content__group">
-                  <select name="location" id="sell-location" class="tabs__select">
-                    <option disabled selected>Location</option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="London">London</option>
-                    <option value="Paris">Paris</option>
-                  </select>
-                  <p id="sell-location-value" class="tabs__select--value">Dhaka</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectLocationSell" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Location</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="Dhaka">Dhaka</div>
+                        <div class="selectCustom-option" data-value="London">London</div>
+                        <div class="selectCustom-option" data-value="Paris">Paris</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">Dhaka</div>
+                  </div>
                 </div>
                 <span class="divider"></span>
-                <div class="content__group">
-                  <select name="property-type" id="sell-property-type" class="tabs__select">
-                    <option disabled selected>Property-type</option>
-                    <option value="Duplex">Duplex</option>
-                    <option value="Townhouse">Townhouse</option>
-                    <option value="Penthouse">Penthouse</option>
-                  </select>
-                  <p id="sell-property-value" class="tabs__select--value">Duplex</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectPropertySell" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Property-type</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="Duplex">Duplex</div>
+                        <div class="selectCustom-option" data-value="Townhouse">Townhouse</div>
+                        <div class="selectCustom-option" data-value="Penthouse">Penthouse</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">Duplex</div>
+                  </div>
                 </div>
                 <span class="divider"></span>
-                <div class="content__group content__group--price">
-                  <select name="price" id="sell-price" class="tabs__select">
-                    <option disabled selected>Price</option>
-                    <option value="$1000-$4000">$1000-$4000</option>
-                    <option value="$4000-$8000">$4000-$8000</option>
-                    <option value="$8000-$10000">$8000-$10000</option>
-                  </select>
-                  <p id="sell-price-value" class="tabs__select--value">$4000-$8000</p>
+                <div class="selectWrapper">
+                  <div class="selectCustom js-selectPriceSell content__group--price" aria-hidden="true">
+                      <span class="selectLabelLocation tabs__select">Price</span>
+                      <div class="selectCustom-options">
+                        <div class="selectCustom-option" data-value="$1000-$4000">$1000-$4000</div>
+                        <div class="selectCustom-option" data-value="$4000-$8000">$4000-$8000</div>
+                        <div class="selectCustom-option" data-value="$8000-$10000">$8000-$10000</div>
+                      </div>
+                      <div class="selectCustom-trigger tabs__select--value">$4000-$8000</div>
+                  </div>
                 </div>
                 <button class="button tabs-button">Search</button>
               </div>
@@ -176,21 +194,21 @@
     <div class="container">
       <h2 class="section-title">Our Partners</h2>
       <div class="partners__row">
-        <div class="partners__img-wrap">
+        <a href="#" class="partners__img-wrap">
           <img src="image/img/partners/biotech.png" alt="biotech" class="partners__img">
-        </div>
-        <div class="partners__img-wrap">
+        </a>
+        <a href="#" class="partners__img-wrap">
           <img src="image/img/partners/express.png" alt="express" class="partners__img">
-        </div>
-        <div class="partners__img-wrap">
+        </a>
+        <a href="#" class="partners__img-wrap">
           <img src="image/img/partners/smile-home.png" alt="smile-home" class="partners__img">
-        </div>
-        <div class="partners__img-wrap">
+        </a>
+        <a href="#" class="partners__img-wrap">
           <img src="image/img/partners/connect.png" alt="connect" class="partners__img">
-        </div>
-        <div class="partners__img-wrap">
+        </a>
+        <a href="#" class="partners__img-wrap">
           <img src="image/img/partners/home-build.png" alt="home-build" class="partners__img">
-        </div>
+        </a>
       </div>
     </div>
   </section>

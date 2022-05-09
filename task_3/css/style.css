@@ -269,10 +269,16 @@ li {
   align-items: flex-start;
   flex-direction: column;
 }
-.content__group--price {
-  min-width: 165px;
+/* start custom select */
+.selectWrapper {
+  position: relative;
+}
+.selectCustom {
+  position: relative;
+  /* min-width: 132px; */
 }
 .tabs__select {
+  display: inline-block;
   margin-bottom: 10px;
   padding-right: 20px;
   appearance: none;
@@ -290,6 +296,42 @@ li {
   background-repeat: no-repeat;
   background-position: center right;
 }
+.tabs__select:hover {
+  cursor: pointer;
+}
+.selectCustom-options {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: auto;
+  border: 1px solid var(--orange);
+  border-radius: 5px;
+  background-color: var(--white);
+  box-shadow: 0px 10px 100px rgb(0 0 0 / 10%);
+  z-index: 1;
+  display: none;
+}
+.selectCustom-option {
+  position: relative;
+  padding: 0 10px;
+  font-size: 16px;
+  color: var(--text-dark-a);
+  transition: all 0.3s;
+}
+.selectCustom-option:hover {
+  cursor: pointer;
+  color: var(--orange);
+  text-shadow: 0 0 0.5px var(--orange), 0 0 0.5px var(--orange);
+}
+.selectCustom.isActive .selectCustom-options {
+  display: block;
+}
+.content__group--price {
+  min-width: 165px;
+}
+/* end custom select */
+
+
 .tabs__select--value {
   margin: 0;
   font-weight: 500;
@@ -878,6 +920,10 @@ li {
   .tabs {
     width: 500px;
   }
+  .selectWrapper {
+    margin-bottom: 15px;
+    width: 33%;
+  }
   .label {
     font-size: 16px;
   }
@@ -981,6 +1027,9 @@ li {
     font-size: 16px;
     line-height: 20px;
   }
+  .selectWrapper {
+    width: 100%;
+  }
   .content-wrap {
     flex-direction: column;
     align-items: flex-start;
@@ -1002,7 +1051,7 @@ li {
     justify-content: center;
   }
   .subscribe-form__input {
-    width: 60%;
+    width: 70%;
     margin: 0 0 10px 0;
   }
   .slide__quote-img-wrap {
