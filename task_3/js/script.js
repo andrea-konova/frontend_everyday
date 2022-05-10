@@ -63,7 +63,7 @@ const selectProperties = () => {
   const elSelectLocationBuy = document.getElementsByClassName('js-selectLocationBuy')[0],
     elSelectLocationBuyValue = elSelectLocationBuy.children[0],
     elSelectLocationBuyOptions = elSelectLocationBuy.children[1],
-    elSelectLocationBuyTrigger = elSelectLocationBuy.children[2];
+    elSelectLocationBuyTrigger = elSelectLocationBuy.children[2];  
 
   const elSelectPropertyBuy = document.getElementsByClassName('js-selectPropertyBuy')[0],
     elSelectPropertyBuyValue = elSelectPropertyBuy.children[0],
@@ -105,167 +105,68 @@ const selectProperties = () => {
     elSelectPriceSellOptions = elSelectPriceSell.children[1],
     elSelectPriceSellTrigger = elSelectPriceSell.children[2];
 
-  Array.from(elSelectLocationBuyOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectLocationBuyTrigger.textContent = e.target.textContent;
-      elSelectLocationBuy.classList.remove('isActive');
+  const changeSelect = (select, options, trigger) => {
+    // Toggle select on label click
+    select.classList.toggle('isActive');
+
+    // Listen for each custom option click
+    Array.from(options.children).forEach(function (elOption) {
+      elOption.addEventListener('click', (e) => {
+        // Update custom select text too
+        trigger.textContent = e.target.textContent;
+        // Close select
+        select.classList.remove('isActive');
+      });
     });
-  });
 
-  elSelectLocationBuyValue.addEventListener('click', (e) => {
-    elSelectLocationBuy.classList.toggle('isActive');
-  });
-
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectLocationBuy.contains(e.target);
-    if (didClickedOutside) {
-      elSelectLocationBuy.classList.remove('isActive');
-    }
-  });
-
-  Array.from(elSelectPropertyBuyOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectPropertyBuyTrigger.textContent = e.target.textContent;
-      elSelectPropertyBuy.classList.remove('isActive');
+    // close the custom select when clicking outside.
+    document.addEventListener('click', (e) => {
+      const didClickedOutside = !select.contains(e.target);
+      if (didClickedOutside) {
+        select.classList.remove('isActive');
+      }
     });
+  };
+
+  // buy selects
+  elSelectLocationBuyValue.addEventListener('click', () => {
+    changeSelect(elSelectLocationBuy, elSelectLocationBuyOptions, elSelectLocationBuyTrigger);
   });
 
-  elSelectPropertyBuyValue.addEventListener('click', (e) => {
-    elSelectPropertyBuy.classList.toggle('isActive');
+  elSelectPropertyBuyValue.addEventListener('click', () => {
+    changeSelect(elSelectPropertyBuy, elSelectPropertyBuyOptions, elSelectPropertyBuyTrigger);
   });
 
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectPropertyBuy.contains(e.target);
-    if (didClickedOutside) {
-      elSelectPropertyBuy.classList.remove('isActive');
-    }
+  elSelectPriceBuyValue.addEventListener('click', () => {
+    changeSelect(elSelectPriceBuy, elSelectPriceBuyOptions, elSelectPriceBuyTrigger);
   });
 
-  Array.from(elSelectPriceBuyOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectPriceBuyTrigger.textContent = e.target.textContent;
-      elSelectPriceBuy.classList.remove('isActive');
-    });
+  // rent selects
+  elSelectLocationRentValue.addEventListener('click', () => {
+    changeSelect(elSelectLocationRent, elSelectLocationRentOptions, elSelectLocationRentTrigger);
   });
 
-  elSelectPriceBuyValue.addEventListener('click', (e) => {
-    elSelectPriceBuy.classList.toggle('isActive');
+  elSelectPropertyRentValue.addEventListener('click', () => {
+    changeSelect(elSelectPropertyRent, elSelectPropertyRentOptions, elSelectPropertyRentTrigger);
   });
 
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectPriceBuy.contains(e.target);
-    if (didClickedOutside) {
-      elSelectPriceBuy.classList.remove('isActive');
-    }
+  elSelectPriceRentValue.addEventListener('click', () => {
+    changeSelect(elSelectPriceRent, elSelectPriceRentOptions, elSelectPriceRentTrigger);
   });
 
-  Array.from(elSelectLocationRentOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectLocationRentTrigger.textContent = e.target.textContent;
-      elSelectLocationRent.classList.remove('isActive');
-    });
+  // sell selects
+  elSelectLocationSellValue.addEventListener('click', () => {
+    changeSelect(elSelectLocationSell, elSelectLocationSellOptions, elSelectLocationSellTrigger);
   });
 
-  elSelectLocationRentValue.addEventListener('click', (e) => {
-    elSelectLocationRent.classList.toggle('isActive');
-  });
-
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectLocationRent.contains(e.target);
-    if (didClickedOutside) {
-      elSelectLocationRent.classList.remove('isActive');
-    }
-  });
-
-  Array.from(elSelectPropertyRentOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectPropertyRentTrigger.textContent = e.target.textContent;
-      elSelectPropertyRent.classList.remove('isActive');
-    });
-  });
-
-  elSelectPropertyRentValue.addEventListener('click', (e) => {
-    elSelectPropertyRent.classList.toggle('isActive');
-  });
-
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectPropertyRent.contains(e.target);
-    if (didClickedOutside) {
-      elSelectPropertyRent.classList.remove('isActive');
-    }
-  });
-
-  Array.from(elSelectPriceRentOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectPriceRentTrigger.textContent = e.target.textContent;
-      elSelectPriceRent.classList.remove('isActive');
-    });
-  });
-
-  elSelectPriceRentValue.addEventListener('click', (e) => {
-    elSelectPriceRent.classList.toggle('isActive');
-  });
-
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectPriceRent.contains(e.target);
-    if (didClickedOutside) {
-      elSelectPriceRent.classList.remove('isActive');
-    }
-  });
-
-  Array.from(elSelectLocationSellOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectLocationSellTrigger.textContent = e.target.textContent;
-      elSelectLocationSell.classList.remove('isActive');
-    });
-  });
-
-  elSelectLocationSellValue.addEventListener('click', (e) => {
-    elSelectLocationSell.classList.toggle('isActive');
-  });
-
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectLocationSell.contains(e.target);
-    if (didClickedOutside) {
-      elSelectLocationSell.classList.remove('isActive');
-    }
-  });
-
-  Array.from(elSelectPropertySellOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectPropertySellTrigger.textContent = e.target.textContent;
-      elSelectPropertySell.classList.remove('isActive');
-    });
-  });
-
-  elSelectPropertySellValue.addEventListener('click', (e) => {
-    elSelectPropertySell.classList.toggle('isActive');
-  });
-
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectPropertySell.contains(e.target);
-    if (didClickedOutside) {
-      elSelectPropertySell.classList.remove('isActive');
-    }
-  });
-
-  Array.from(elSelectPriceSellOptions.children).forEach(function (elOption) {
-    elOption.addEventListener('click', (e) => {
-      elSelectPriceSellTrigger.textContent = e.target.textContent;
-      elSelectPriceSell.classList.remove('isActive');
-    });
+  elSelectPropertySellValue.addEventListener('click', () => {
+    changeSelect(elSelectPropertySell, elSelectPropertySellOptions, elSelectPropertySellTrigger);
   });
 
   elSelectPriceSellValue.addEventListener('click', (e) => {
-    elSelectPriceSell.classList.toggle('isActive');
+    changeSelect(elSelectPriceSell, elSelectPriceSellOptions, elSelectPriceSellTrigger);
   });
 
-  document.addEventListener('click', (e) => {
-    const didClickedOutside = !elSelectPriceSell.contains(e.target);
-    if (didClickedOutside) {
-      elSelectPriceSell.classList.remove('isActive');
-    }
-  });
 };
 
 selectProperties();
