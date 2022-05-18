@@ -1,0 +1,14 @@
+@import "normolize";
+@import "fonts";
+@import "variable";
+@import "settings";
+@import  "templates/header";
+
+
+body {
+  background-color: #000;
+  span {
+    color: red;
+  }
+  background: url('@img/Turkey.jpg') 0 0 no-repeat;
+}
