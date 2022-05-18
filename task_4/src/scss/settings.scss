@@ -28,13 +28,14 @@ li {
   display: flex;
 }
 .section-title {
-  margin: 0;
+  margin: 0 auto 20px auto;
   font-family: 'Rosario', sans-serif;
   font-weight: 700;
   font-size: 70px;
   line-height: 90px;
 }
 .text {
+  margin: 0;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -49,13 +50,59 @@ li {
   background-position: center center;
   background-repeat: no-repeat;
   transition: all 0.3s;
+  &:hover {
+    cursor: pointer;
+  }
 }
-.round-button:hover {
-  cursor: pointer;
+.link-block {
+  display: flex;
+  align-items: center;
+  &__text {
+    margin: 0;
+    padding-right: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: $dark;
+  }
+  &__arrow {
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+    background-color: $main-green;
+    background-image: url('../img/icons/Arrow-right.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and ( max-width: 992px ) {
+  .section-title {
+    font-size: 56px;
+    line-height: 70px;
+  }
+  .text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .link-block {
+    &__arrow {
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 @media screen and ( max-width: 760px ) {
   .round-button {
     width: 35px;
     height: 35px;
+  }
+  .section-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 18px;
   }
 }

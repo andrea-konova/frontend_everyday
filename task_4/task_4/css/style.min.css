@@ -403,7 +403,7 @@ li {
 }
 
 .section-title {
-  margin: 0;
+  margin: 0 auto 20px auto;
   font-family: "Rosario", sans-serif;
   font-weight: 700;
   font-size: 70px;
@@ -411,6 +411,7 @@ li {
 }
 
 .text {
+  margin: 0;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -427,15 +428,63 @@ li {
   background-repeat: no-repeat;
   transition: all 0.3s;
 }
-
 .round-button:hover {
   cursor: pointer;
 }
 
+.link-block {
+  display: flex;
+  align-items: center;
+}
+.link-block__text {
+  margin: 0;
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #555555;
+}
+.link-block__arrow {
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  background-color: #09A66D;
+  background-image: url("../img/icons/Arrow-right.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 992px) {
+  .section-title {
+    font-size: 56px;
+    line-height: 70px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .link-block__arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
 @media screen and (max-width: 760px) {
   .round-button {
     width: 35px;
     height: 35px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 .header {
@@ -534,6 +583,11 @@ li {
     padding: 30px 0;
   }
 
+  .login-button:hover {
+    color: #ffffff;
+    background-color: #09A66D;
+  }
+
   .logo__img-wrap {
     width: 45px;
     height: 45px;
@@ -613,6 +667,8 @@ li {
     padding-bottom: 20px;
     z-index: 3;
     width: 100%;
+    border: 3px solid #09A66D;
+    border-radius: 20px;
     background-color: #F3FBF8;
     transform: translateX(-100%);
     transition: transform 0.5s;
@@ -652,10 +708,106 @@ li {
     font-size: 14px;
   }
 }
-body {
-  background-color: #000;
-  background: url("../img/Turkey.jpg") 0 0 no-repeat;
+.main {
+  padding: 93px 0 50px;
+  background-color: #F3FBF8;
 }
-body span {
-  color: red;
+.main__container {
+  background-image: url("../../img/vegetable-png.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.main__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__section-title {
+  text-align: center;
+}
+.main__text {
+  margin: 0 auto 40px;
+  width: 60%;
+  max-width: 637px;
+  text-align: center;
+}
+.main__link-block {
+  margin: 0 auto;
+}
+.main__data-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.data__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 250px;
+  height: 116px;
+  background-color: #ffffff;
+}
+.data__item:nth-child(3) {
+  margin-bottom: 0;
+}
+.data__icon {
+  margin: 0 24px 0 33px;
+  padding: 0;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background-color: #F3FBF8;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.data__icon--user {
+  background-image: url("../../img/icons/user.svg");
+}
+.data__icon--star {
+  background-image: url("../../img/icons/star.svg");
+}
+.data__icon--harvest {
+  background-image: url("../../img/icons/harvest.svg");
+}
+.data__number {
+  margin: 0;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
+}
+.data__text {
+  color: #000000;
+}
+
+@media screen and (max-width: 992px) {
+  .data__item {
+    margin-bottom: 30px;
+    width: 180px;
+    height: 90px;
+  }
+  .data__icon {
+    margin: 0 15px 0 20px;
+    width: 45px;
+    height: 45px;
+  }
+  .data__number {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .main {
+    padding: 50px 0;
+  }
+  .main__data-row {
+    align-items: center;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .main__text {
+    width: 80%;
+  }
 }
