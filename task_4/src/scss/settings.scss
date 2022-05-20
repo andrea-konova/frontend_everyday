@@ -36,7 +36,7 @@ li {
 }
 .text {
   margin: 0;
-  width: 90%;
+  width: 100%;
   max-width: 637px;
   font-weight: 400;
   font-size: 18px;
@@ -69,7 +69,7 @@ li {
     color: $dark;
   }
   &__arrow {
-    width: 50%;
+    width: 60%;
     max-width: 64px;
     height: 64px;
     border: none;
@@ -90,8 +90,10 @@ li {
     line-height: 24px;
   }
   .link-block {
+    width: 140px;
     &__arrow {
-      width: 40px;
+      width: 60%;
+      max-width: 40px;
       height: 40px;
     }
   }
