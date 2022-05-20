@@ -36,6 +36,8 @@ li {
 }
 .text {
   margin: 0;
+  width: 90%;
+  max-width: 637px;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
@@ -57,16 +59,18 @@ li {
 .link-block {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 176px;
   &__text {
     margin: 0;
-    padding-right: 20px;
     font-weight: 500;
     font-size: 18px;
     line-height: 30px;
     color: $dark;
   }
   &__arrow {
-    width: 64px;
+    width: 50%;
+    max-width: 64px;
     height: 64px;
     border: none;
     border-radius: 50%;
@@ -102,6 +106,7 @@ li {
     line-height: 40px;
   }
   .text {
+    width: 100%;
     font-size: 14px;
     line-height: 18px;
   }
