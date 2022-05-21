@@ -100,8 +100,14 @@
 }
 @media screen and ( max-width: 576px ) {
   .main {
+    padding-top: 0;
     &__text {
       width: 80%;
+    }
+    &__container {
+      padding-top: 300px;
+      background-position: top 40px center;
+      background-size: contain;
     }
   }
 }
