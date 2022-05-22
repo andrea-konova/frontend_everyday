@@ -6,7 +6,7 @@ allFunction.isWebp();
 burgerMenu();
 
 // init Swiper:
-const swiper = new Swiper('.feature__slider', {
+const featureSwiper = new Swiper('.feature__slider', {
   // Optional parameters
   direction: 'vertical',
   loop: true,
@@ -16,4 +16,20 @@ const swiper = new Swiper('.feature__slider', {
     nextEl: '.feature__slider-button',
   },
 
+});
+
+const feedbackSwiper = new Swiper('.feedback__slider', {
+  // Optional parameters
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.feedback-button-next',
+    prevEl: '.feedback-button-prev',
+  },
 });
