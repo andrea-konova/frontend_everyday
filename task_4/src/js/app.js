@@ -1,9 +1,10 @@
 import * as allFunction from "./modules/function.js";
 import { burgerMenu } from "./modules/burgerMenu.js";
-
+import { counter } from "./modules/counter.js";
 
 allFunction.isWebp();
 burgerMenu();
+counter();
 
 // init Swiper:
 const featureSwiper = new Swiper('.feature__slider', {
