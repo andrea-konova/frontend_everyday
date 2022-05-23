@@ -1,6 +1,8 @@
 .explore {
+  position: relative;
   padding: 90px 0 140px;
   background-color: $primary;
+  overflow: hidden;
   &__row {
     display: flex;
     align-items: flex-start;
@@ -14,9 +16,11 @@
     }
   }
   &__content {
+    position: relative;
     margin-top: 30px;
     width: 50%;
     max-width: 557px;
+    z-index: 2;
   }
   &__text {
     margin-bottom: 50px;

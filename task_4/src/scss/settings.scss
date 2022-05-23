@@ -80,6 +80,27 @@ li {
     background-repeat: no-repeat;
   }
 }
+.parallax {
+  position: absolute;
+  &-1 {
+    top: -15px;
+    left: 20px;
+  }
+  &-2 {
+    top: 55%;
+    left: 70%;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    &-wrap {
+      width: 500px;
+      height: 500%;
+    }
+  }
+}
 @media screen and ( max-width: 992px ) {
   .section-title {
     font-size: 56px;
@@ -97,6 +118,18 @@ li {
       height: 40px;
     }
   }
+  .parallax {
+    &-1 {
+      top: -15px;
+      left: 20px;
+    }
+    &__image {
+      &-wrap {
+        width: 350px;
+        height: 350%;
+      }
+    }
+  }
 }
 @media screen and ( max-width: 760px ) {
   .round-button {
@@ -111,5 +144,39 @@ li {
     width: 100%;
     font-size: 14px;
     line-height: 18px;
+  }
+  .parallax {
+    &-1 {
+      top: -15px;
+      left: 20px;
+    }
+    &-2 {
+      top: 70%;
+      left: 60%;
+    }
+    &__image {
+      &-wrap {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}
+@media screen and ( max-width: 576px ) {
+  .parallax {
+    &-1 {
+      top: 25%;
+      left: -30px;
+    }
+    &-2 {
+      top: 75%;
+      left: 50%;
+    }
+    &__image {
+      &-wrap {
+        width: 200px;
+        height: 200%;
+      }
+    }
   }
 }

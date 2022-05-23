@@ -33,3 +33,11 @@ const feedbackSwiper = new Swiper('.feedback__slider', {
     prevEl: '.feedback-button-prev',
   },
 });
+
+// main section
+let scene1 = document.getElementById('scene-1');
+let parallax1 = new Parallax(scene1);
+
+// explore section
+let scene2 = document.getElementById('scene-2');
+let parallax2 = new Parallax(scene2);
