@@ -26,6 +26,7 @@ import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { gitHubPages } from "./gulp/tasks/ghPages.js";
 import { vendorJS, vendorCSS } from "./gulp/tasks/exportModules.js";
 import { copyFavicon } from "./gulp/tasks/copyFavicon.js";
 
@@ -53,12 +54,14 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
+const deployGHPages = gulp.series(reset, mainTasks, gitHubPages);
 
 // экспорт сценариев
 export { dev }
 export { build }
 export { deployZIP }
 export { deployFTP }
+export { deployGHPages }
 
 // выполненеие сценария по умолчанию
 gulp.task('default', dev);

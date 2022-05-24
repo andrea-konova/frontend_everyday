@@ -9,6 +9,7 @@
     "build": "gulp build --build",
     "zip": "gulp deployZIP --build",
     "deploy": "gulp deployFTP --build",
+    "gitHub": "gulp deployGHPages --build",
     "svgSprive": "gulp svgSprive"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "gulp-clean-css": "latest",
     "gulp-file-include": "latest",
     "gulp-fonter": "latest",
+    "gulp-gh-pages": "latest",
     "gulp-group-css-media-queries": "latest",
     "gulp-if": "latest",
     "gulp-imagemin": "latest",
