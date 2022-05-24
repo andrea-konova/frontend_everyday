@@ -52,10 +52,10 @@
       background-position: center center;
       background-size: cover;
       &:nth-child(1) {
-        background-image: url('../../img/AppStore.jpg');
+        background-image: url('../img/AppStore.jpg');
       }
       &:nth-child(2) {
-        background-image: url('../../img/GooglePlay.jpg');
+        background-image: url('../img/GooglePlay.jpg');
       }
     }
   }
