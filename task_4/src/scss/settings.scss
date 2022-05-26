@@ -43,6 +43,11 @@ li {
   line-height: 30px;
   color: $dark;
 }
+.button {
+  &:hover {
+    cursor: pointer;
+  }
+}
 .round-button {
   padding: 0;
   width: 40px;
@@ -72,12 +77,19 @@ li {
     width: 60%;
     max-width: 64px;
     height: 64px;
-    border: none;
+    border: 2px solid $main-green;
     border-radius: 50%;
     background-color: $main-green;
     background-image: url('../img/icons/Arrow-right.svg');
     background-position: center center;
     background-repeat: no-repeat;
+    transition: all 0.3s;
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $main-green;
+      background-color: $primary;
+      background-image: url('../img/icons/Arrow-right-1.svg');
+    }
   }
 }
 .parallax {

@@ -4,6 +4,7 @@
   background-color: $primary;
   &__container {
     background-image: url('../img/main.png');
+    background-size: 860px;
     background-position: left bottom;
     background-repeat: no-repeat;
   }
@@ -113,9 +114,6 @@
 @media screen and ( max-width: 576px ) {
   .main {
     padding-top: 0;
-    &__container {
-      background-size: 500px;
-    }
     &__text {
       width: 80%;
     }

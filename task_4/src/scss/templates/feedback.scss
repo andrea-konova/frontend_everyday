@@ -74,19 +74,30 @@
   &-button {
     width: 56px;
     height: 56px;
-    border: none;
+    border: 1px solid $main-green;
     border-radius: 50%;
     background-color: $main-green;
     opacity: 0.56;
     background-position: center center;
     background-repeat: no-repeat;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $primary;
+    }
     &-prev {
       border: 1px solid #CCCCCC;
       background-color: $white;
       background-image: url("../img/icons/prev-arrow.svg");
+      &:hover {
+        border: 1px solid $black;
+        background-image: url("../img/icons/prev-arrow-1.svg");
+      }
     }
     &-next {
       background-image: url("../img/icons/next-arrow.svg");
+      &:hover {
+        background-image: url("../img/icons/next-arrow-1.svg");
+      }
     }
   }
   &__add {

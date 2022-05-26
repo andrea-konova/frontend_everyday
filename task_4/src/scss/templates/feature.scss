@@ -39,6 +39,9 @@
       border: none;
       border-radius: 50%;
       background: url("../img/icons/Arrow-down.svg") no-repeat center;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   &-slide {

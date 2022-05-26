@@ -476,6 +476,10 @@ li {
   color: #555555;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .round-button {
   padding: 0;
   width: 40px;
@@ -518,12 +522,22 @@ li {
   width: 60%;
   max-width: 64px;
   height: 64px;
-  border: none;
+  border: 2px solid #09A66D;
   border-radius: 50%;
   background-color: #09A66D;
   background-image: url("../img/icons/Arrow-right.svg");
   background-position: center center;
   background-repeat: no-repeat;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.link-block__arrow:hover {
+  cursor: pointer;
+  border: 2px solid #09A66D;
+  background-color: #F3FBF8;
+  background-image: url("../img/icons/Arrow-right-1.svg");
 }
 
 .parallax {
@@ -658,16 +672,27 @@ li {
   margin-right: 20px;
   background-color: #F3FBF8;
   background-image: url("../img/icons/Search.svg");
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.search-button:hover {
+  background-color: #09A66D;
+  background-image: url("../img/icons/Search-1.svg");
 }
 
 .cart-button {
   background-color: #F3FBF8;
   background-image: url("../img/icons/Buy.svg");
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.search-button:hover,
 .cart-button:hover {
   background-color: #09A66D;
+  background-image: url("../img/icons/Buy-1.svg");
 }
 
 .main {
@@ -680,6 +705,7 @@ li {
   background-image: url("../img/main.png"); }
 
 .main__container {
+  background-size: 860px;
   background-position: left bottom;
   background-repeat: no-repeat;
 }
@@ -846,6 +872,10 @@ li {
   border: none;
   border-radius: 50%;
   background: url("../img/icons/Arrow-down.svg") no-repeat center;
+}
+
+.feature__slider-button:hover {
+  cursor: pointer;
 }
 
 .feature-slide {
@@ -1061,12 +1091,19 @@ li {
 .feedback-button {
   width: 56px;
   height: 56px;
-  border: none;
+  border: 1px solid #09A66D;
   border-radius: 50%;
   background-color: #09A66D;
   opacity: 0.56;
   background-position: center center;
   background-repeat: no-repeat;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.feedback-button:hover {
+  background-color: #F3FBF8;
 }
 
 .feedback-button-prev {
@@ -1075,8 +1112,17 @@ li {
   background-image: url("../img/icons/prev-arrow.svg");
 }
 
+.feedback-button-prev:hover {
+  border: 1px solid #222222;
+  background-image: url("../img/icons/prev-arrow-1.svg");
+}
+
 .feedback-button-next {
   background-image: url("../img/icons/next-arrow.svg");
+}
+
+.feedback-button-next:hover {
+  background-image: url("../img/icons/next-arrow-1.svg");
 }
 
 .feedback__add {
@@ -1211,13 +1257,20 @@ li {
   display: inline-block;
   margin-bottom: 16px;
   padding: 10px 22px;
-  border: none;
+  border: 2px solid #F3FBF8;
   border-radius: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
   color: #333;
   background-color: #F3FBF8;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.download__link-app:hover {
+  border: 2px solid #09A66D;
 }
 
 .download__text {
@@ -1239,11 +1292,14 @@ li {
   background-size: cover;
 }
 
-.no-webp .download__links-item:nth-child(1) {
-  background-image: url("../img/AppStore.jpg"); }
-
-.no-webp .download__links-item:nth-child(2) {
-  background-image: url("../img/GooglePlay.jpg"); }
+.links-item__img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center center;
+     object-position: center center;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 
 .footer {
   padding: 67px 0 118px;
@@ -1929,10 +1985,6 @@ li {
     padding-top: 0;
   }
 
-  .main__container {
-    background-size: 500px;
-  }
-
   .main__text {
     width: 80%;
   }
@@ -1997,7 +2049,3 @@ li {
 .webp .main__container { background-image: url(../img/main.webp); }
 
 .webp .feature { background: url(../img/bg-line.webp) no-repeat; }
-
-.webp .download__links-item:nth-child(1) { background-image: url(../img/AppStore.webp); }
-
-.webp .download__links-item:nth-child(2) { background-image: url(../img/GooglePlay.webp); }

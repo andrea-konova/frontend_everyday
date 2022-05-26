@@ -57,22 +57,29 @@
   border: 2px solid $main-green;
   border-radius: 8px;
   transition: all 0.3s;
-}
-.login-button:hover {
-  color: $dark;
-  background-color: $primary;
+  &:hover {
+    color: $dark;
+    background-color: $primary;
+  }
 }
 .search-button {
   margin-right: 20px;
   background-color: $primary;
   background-image: url('../img/icons/Search.svg');
+  transition: all 0.3s;
+  &:hover {
+    background-color: $main-green;
+    background-image: url('../img/icons/Search-1.svg');
+  }
 }
 .cart-button {
   background-color: $primary;
   background-image: url('../img/icons/Buy.svg');
-}
-.search-button:hover, .cart-button:hover {
-  background-color: $main-green;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $main-green;
+    background-image: url('../img/icons/Buy-1.svg');
+  }
 }
 @media screen and ( max-width: 992px ) {
   .header {
