@@ -45,7 +45,7 @@ const accordion = () => {
   }
 
   const initSpoilers = () => {
-    spoilers.classList.add('_init');
+    // spoilers.classList.add('_init');
     initSpoilersBody(spoilers);
     spoilers.addEventListener('click', setSpoilerAction);
   }
