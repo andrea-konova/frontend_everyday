@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+*:active, *:hover, *:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+:root {
+  --main-text: #6E728E;
+  --text: #6D72DE;
+  --white: #ffffff;
+  --main-bg: linear-gradient(135deg, #A2A7F0 0%, #696EDD 100%);
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+body {
+  margin: 0;
+}
+ul {
+  padding-inline-start: 0;
+}
+li {
+  list-style: none;
+}
+.content-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 71px 0 103px;
+  width: 100%;
+  background-color: #F2F2F2;
+  background-image: url('../image/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1050px;
+}
+.title-block {
+  margin: 0 auto 64px;
+  width: 240px;
+}
+.title-block__header {
+  margin: 0 0 40px 0;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: var(--main-text);
+}
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.switch__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 28px;
+  color: var(--main-text);
+  opacity: 0.5;
+}
+.switch-btn {
+  display: inline-block;
+  width: 56px;
+  height: 32px;
+  border-radius: 16px;
+  background: var(--main-bg);
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 0.3s;
+}
+.switch-btn:hover {
+  opacity: 0.5;
+}
+.switch-btn::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--white);
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+.switch-on {
+  background: var(--main-bg);
+}
+.switch-on::after {
+  right: 28px;
+}
+.card-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+}
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+  padding: 31px 0;
+  color: var(--main-text);
+  background-color: var(--white);
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+}
+.card:nth-child(1) {
+  border-radius: 10px 0px 0px 10px;
+}
+.card:nth-child(3) {
+  border-radius: 0px 10px 10px 0px;
+}
+.card_type {
+  font-size: 18px;
+  line-height: 28px;
+}
+.card__price {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 0;
+  font-size: 40px;
+  line-height: 49px;
+  color: #4A4D60;
+}
+.card__price-amount {
+  margin-left: 8px;
+  font-size: 72px;
+  line-height: 71px;
+}
+.card__list {
+  margin: 32px 0;
+  width: 80%;
+  text-align: center;
+}
+.card__list-item {
+  padding: 12px 0;
+  font-size: 15px;
+  line-height: 28px;
+  border-top: 1px solid rgba(110, 114, 142, 0.5);
+}
+.card__list-item:last-child {
+  border-bottom: 1px solid rgba(110, 114, 142, 0.5);
+}
+.card__button {
+  display: inline-block;
+  padding: 14px 0;
+  width: 80%;
+  border: 1px  solid var(--text);
+  border-radius: 6px;
+  background: var(--main-bg);
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 1.39286px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
+  transition: all 0.3s;
+}
+.card__button:hover {
+  background: var(--white);
+  color: var(--text);
+}
+.card.active {
+  padding: 55px 0;
+  color: var(--white);
+  background: var(--main-bg);
+  box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
+  border-radius: 10px;
+}
+.card.active .card__price {
+  color:  var(--white);
+}
+.card.active .card__button {
+  border: 1px  solid var(--white);
+  background: var(--white);
+  color: var(--text);
+  transition: all 0.3s;
+}
+.card.active .card__button:hover {
+  background: var(--main-bg);
+  color: var(--white);
+}
+
+
+@media screen and ( max-width: 992px ) {
+  .card-wrap {
+    gap: 32px;
+  }
+  .card {
+    border-radius: 10px;
+  }
+  .card:nth-child(1) {
+    border-radius: 10px;
+  }
+  .card:nth-child(3) {
+    border-radius: 10px;
+  }
+  .card.active {
+    padding: 31px;
+  }
+
+}
+@media screen and ( max-width: 760px ) {
+  .content-wrap {
+    padding: 0;
+  }
+  .title-block {
+    margin: 64px auto 80px;
+  }
+  .card-wrap {
+    margin-bottom: 71px;
+  }
+}
