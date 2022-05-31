@@ -221,4 +221,15 @@ li {
   .card-wrap {
     margin-bottom: 71px;
   }
+  .switch-btn:hover {
+    opacity: 1;
+  }
+  .card__button:hover {
+    background: var(--main-bg);;
+    color: var(--white);
+  }
+  .card.active .card__button:hover {
+    background: var(--white);
+    color: var(--text);
+  }
 }
