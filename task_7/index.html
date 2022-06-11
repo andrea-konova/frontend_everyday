@@ -47,24 +47,30 @@
       <div class="footer__row row">
         <div class="row__item">
           <h2 class="row__title">CURRENT TIMEZONE</h2>
-          <p class="row__text">Europe/London</p>
+          <p class="row__text" id="timezone">Europe/London</p>
         </div>
         <div class="row__item">
           <h2 class="row__title">Day of the week</h2>
-          <p class="row__text">5</p>
+          <p class="row__text" id="day-week">5</p>
         </div>
         <div class="row__item">
           <h2 class="row__title">Day of the year</h2>
-          <p class="row__text">295</p>
+          <p class="row__text" id="day-year">295</p>
         </div>
         <div class="row__item">
           <h2 class="row__title">Week number</h2>
-          <p class="row__text">42</p>
+          <p class="row__text" id="week-number">42</p>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/plugin/timezone.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/plugin/weekday.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/plugin/dayOfYear.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/plugin/weekOfYear.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
