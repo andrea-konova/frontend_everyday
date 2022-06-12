@@ -23,7 +23,7 @@ body {
   margin: 0;
   color: var(--white);
   background-color: var(--dark);
-  background-image: url(../image/img/bg-1.jpg);
+  /* background-image: url('../image/img/bg-1.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -33,7 +33,7 @@ body {
   max-width: 1110px;
 }
 .header {
-  padding: 55px 0 233px 0;
+  padding: 55px 0 177px 0;
 }
 .quote {
   display: flex;
@@ -42,6 +42,7 @@ body {
 }
 .quote__text {
   width: 540px;
+  min-height: 125px;
   font-size: 18px;
   line-height: 28px;
 }
@@ -72,7 +73,7 @@ body {
   opacity: 1;
 }
 .main {
-  padding-bottom: 98px;
+  padding: 56px 0 98px;
 }
 .greeting {
   display: flex;
@@ -83,7 +84,7 @@ body {
   margin-right: 16px;
   width: 24px;
   height: 24px;
-  background-image: url('../image/svg/sun.svg');
+  /* background-image: url('../image/svg/sun.svg'); */
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -131,6 +132,8 @@ body {
 .toggle-button {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 146px;
   padding: 8px 8px 8px 21px;
   border: none;
   border-radius: 28px;
@@ -144,7 +147,6 @@ body {
 }
 .toggle-button::after {
   content: '';
-  margin-left: 13px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -152,7 +154,10 @@ body {
   background-image: url('../image/svg/arrow.svg');
   background-position: center center;
   background-repeat: no-repeat;
-  transition: all 0.3s;
+  transition: transform 0.3s ease 0s;
+}
+.toggle-button._active::after {
+  transform: rotate(-180deg);
 }
 .toggle-button:hover {
   cursor: pointer;
@@ -161,9 +166,13 @@ body {
   background-color: var(--bg-hover);
 }
 .footer {
+  display: block;
   padding: 74px 0;
   background-color: var(--footer-light);
   color: var(--dark);
+}
+._hidden {
+  display: none;
 }
 .row {
   display: grid;
@@ -199,7 +208,10 @@ body {
 
 @media screen and ( max-width: 992px ) {
   .header {
-    padding: 80px 0 388px 0;
+    padding: 80px 0 235px 0;
+  }
+  .main {
+    padding-top: 153px;
   }
   .greeting__text {
     font-size: 18px;
@@ -236,7 +248,10 @@ body {
 }
 @media screen and ( max-width: 760px ) {
   .header {
-    padding: 32px 0 226px 0;
+    padding: 32px 0 126px 0;
+  }
+  .main {
+    padding-top: 100px;
   }
   .quote {
     width: 90%;
@@ -257,6 +272,7 @@ body {
   }
   .toggle-button {
     padding: 3px 3px 3px 17px;
+    width: 115px;
     border: none;
     font-size: 12px;
     line-height: 14px;
