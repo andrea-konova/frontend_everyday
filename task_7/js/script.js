@@ -6,6 +6,7 @@ const body = document.querySelector('body'),
   time = document.querySelector('.time'),
   timeZone = document.querySelector('.time-block__zone'),
   timeZoneTown = document.getElementById('timezone'),
+  city = document.querySelector('.city'),
   dayOfTheWeek = document.getElementById('day-week'),
   dayOfTheYear = document.getElementById('day-year'),
   weekNumber = document.getElementById('week-number'),
@@ -118,47 +119,109 @@ async function getQuotes() {
 
 // audio player
 const audio = new Audio();
-console.log(audio);
 
 const playAudio = (playNum) => {
   audio.src = playList[playNum].src;
   audio.currentTime = 0;
   audio.play();
-
 }
 
 // типо функция показа временной зоны, нужно доделать
 const showTimeZone = () => {
-  const date = new Date();
-  const offset = date.getTimezoneOffset() / 60;
+  const offsetInHours = dayjs().utcOffset() / 60;
+
+  const localTimeZoneTown = dayjs.tz.guess(),
+    timeZoneTown = localTimeZoneTown.split("/").pop();
 
   let localTimeZone;
-  // const localTimeZoneTown = dayjs.tz.guess();
 
-  switch (offset) {
+  switch (offsetInHours) {
     case 0:
-      localTimeZone = GMT;
-      localTimeZoneTown = Europe/London;
+      localTimeZone = 'GMT';
       break;
     case 1:
-      localTimeZone = CET;
-      localTimeZoneTown = Europe/Berlin;
+      localTimeZone = 'CET';
       break;
     case 2:
-      localTimeZone = EET;
-      localTimeZoneTown = Europe/Berlin;
+      localTimeZone = 'EET';
+      break;
+    case 3:
+      localTimeZone = 'MSK';
+      break;
+    case 4:
+      localTimeZone = 'UTC+4';
+      break;
+    case 5:
+      localTimeZone = 'UTC+5';
+      break;
+    case 6:
+      localTimeZone = 'UTC+6';
+      break;
+    case 7:
+      localTimeZone = 'UTC+7';
+      break;
+    case 8:
+      localTimeZone = 'AWST';
+      break;
+    case 9:
+      localTimeZone = 'UTC+9';
+      break;
+    case 10:
+      localTimeZone = 'AEST';
+      break;
+    case 11:
+      localTimeZone = 'UTC+11';
+      break;
+    case 12:
+      localTimeZone = 'UTC+12';
+      break;
+    case -1:
+      localTimeZone = 'UTC−1';
+      break;
+    case -2:
+      localTimeZone = 'UTC−2';
+      break;
+    case -3:
+      localTimeZone = 'UTC−3';
+      break;
+    case -4:
+      localTimeZone = 'AST';
+      break;
+    case -5:
+      localTimeZone = 'EST';
+      break;
+    case -6:
+      localTimeZone = 'CST';
+      break;
+    case -7:
+      localTimeZone = 'MST';
+      break;
+    case -8:
+      localTimeZone = 'PST';
+      break;
+    case -9:
+      localTimeZone = 'AKST';
+      break;
+    case -10:
+      localTimeZone = 'HAST';
+      break;
+    case -11:
+      localTimeZone = 'SST';
+      break;
+    case -12:
+      localTimeZone = 'UTC−12';
       break;
     default:
-      // alert( "Нет таких значений" );
       break;
   }
 
   timeZone.textContent = localTimeZone;
+  city.textContent = timeZoneTown;
 }
 
 // вызов функций
 showTime();
-// showTimeZone();
+showTimeZone();
 getFooterData();
 getQuotes();
 playAudio(playNum);

@@ -1,13 +1,13 @@
 const playList = [
   {
-    title: 'far-from-home',
-    src: './sounds/far-from-home.mp3',
-    duration: '02:35'
-  },
-  {
     title: 'hopeful-piano',
     src: './sounds/hopeful-piano.mp3',
     duration: '02:15'
+  },
+  {
+    title: 'far-from-home',
+    src: './sounds/far-from-home.mp3',
+    duration: '02:35'
   },
   {
     title: 'just-relax',
