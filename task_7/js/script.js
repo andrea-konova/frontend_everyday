@@ -1,3 +1,7 @@
+// импорт файлов
+import playList from './playList.js';
+
+//  обьявление переменных
 const body = document.querySelector('body'),
   time = document.querySelector('.time'),
   timeZone = document.querySelector('.time-block__zone'),
@@ -20,7 +24,9 @@ dayjs.extend(window.dayjs_plugin_weekday);
 dayjs.extend(window.dayjs_plugin_dayOfYear);
 dayjs.extend(window.dayjs_plugin_isoWeek);
 
-let buttonOn = false;
+let buttonOn = false,
+  playNum = 0,
+  isPlay = true;
 
 // функция показа времени и вызова других функций
 const showTime = () => {
@@ -41,7 +47,7 @@ const getFooterData = () => {
 }
 
 // функция показать/скрыть футер
-const togleFooter = () => {
+const toggleFooter = () => {
   footer.classList.toggle('_hidden');
   header.classList.toggle('_hidden');
 }
@@ -110,6 +116,17 @@ async function getQuotes() {
   quoteAuthor.textContent = data[quoteNumber].author;
 }
 
+// audio player
+const audio = new Audio();
+console.log(audio);
+
+const playAudio = (playNum) => {
+  audio.src = playList[playNum].src;
+  audio.currentTime = 0;
+  audio.play();
+
+}
+
 // типо функция показа временной зоны, нужно доделать
 const showTimeZone = () => {
   const date = new Date();
@@ -144,10 +161,22 @@ showTime();
 // showTimeZone();
 getFooterData();
 getQuotes();
+playAudio(playNum);
 
 // слушиватели событий
 changeQuote.addEventListener('click', getQuotes);
+
 toggleButton.addEventListener('click', () => {
-  togleFooter();
+  toggleFooter();
   changeToggleButton();
 })
+
+audio.addEventListener("ended", () => {
+  if (playNum === playList.length - 1) {
+    playNum = 0;
+  } else {
+    playNum++;
+  }
+
+  playAudio(playNum);
+});
