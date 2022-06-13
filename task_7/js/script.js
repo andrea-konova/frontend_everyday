@@ -123,6 +123,7 @@ const audio = new Audio();
 const playAudio = (playNum) => {
   audio.src = playList[playNum].src;
   audio.currentTime = 0;
+  audio.setAttribute('muted', '');
   audio.play();
 }
 
