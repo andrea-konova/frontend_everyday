@@ -225,7 +225,6 @@ showTime();
 showTimeZone();
 getFooterData();
 getQuotes();
-playAudio(playNum);
 
 // слушиватели событий
 changeQuote.addEventListener('click', getQuotes);
@@ -235,12 +234,12 @@ toggleButton.addEventListener('click', () => {
   changeToggleButton();
 })
 
-audio.addEventListener("ended", () => {
-  if (playNum === playList.length - 1) {
-    playNum = 0;
-  } else {
-    playNum++;
-  }
+// audio.addEventListener("ended", () => {
+//   if (playNum === playList.length - 1) {
+//     playNum = 0;
+//   } else {
+//     playNum++;
+//   }
 
-  playAudio(playNum);
-});
+//   playAudio(playNum);
+// });
