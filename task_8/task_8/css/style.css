@@ -511,7 +511,7 @@ input:checked + label {
 }
 .timer__path-elapsed {
   stroke-width: 3px;
-  stroke: #F87070;
+  stroke: #161932;
 }
 .timer__path-remaining {
   stroke-width: 3px;
@@ -520,7 +520,7 @@ input:checked + label {
   transform-origin: center;
   transition: 1s linear all;
   fill-rule: nonzero;
-  stroke: currentColor;
+  stroke: #F87070;
 }
 .timer__body {
   position: absolute;

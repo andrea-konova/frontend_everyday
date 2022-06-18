@@ -78,39 +78,6 @@ input:checked+label {
     z-index: -1;
   }
 }
-// .timer {
-//   position: relative;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   &__line {
-//     position: absolute;
-//     width: 339px;
-//     height: 339px;
-//     border-radius: 50%;
-//     background-color: $color-1;
-//     z-index: 1;
-//   }
-//   
-//   &__counter {
-//     margin: 0;
-//     font-weight: 700;
-//     font-size: 100px;
-//     line-height: 124px;
-//     letter-spacing: -5px;
-//   }
-//   &__info {
-//     margin: 0;
-//     padding-left: 15px;
-//     font-weight: 700;
-//     font-size: 16px;
-//     line-height: 20px;
-//     letter-spacing: 15px;
-//     text-transform: uppercase;
-//   }
-// }
-
-// разметка таймера проба
 .timer {
   position: relative;
   width: 366px;
@@ -125,8 +92,7 @@ input:checked+label {
   }
   &__path-elapsed {
     stroke-width: 3px;
-    // stroke: $bg-color-2;
-    stroke: $color-1;
+    stroke: $bg-color-2;
   }
   &__path-remaining {
     stroke-width: 3px;
@@ -135,7 +101,8 @@ input:checked+label {
     transform-origin: center;
     transition: 1s linear all;
     fill-rule: nonzero;
-    stroke: currentColor;
+    stroke: $color-1;
+    // stroke: currentColor;
   }
   &__body {
     position: absolute;
