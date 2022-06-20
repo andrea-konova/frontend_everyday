@@ -2,14 +2,13 @@ export const timer = () => {
 
   // const из документа
   const timer = document.querySelector('.timer__counter'),
-    buttonPomodoro = document.getElementById('button-1'),
-    buttonShort = document.getElementById('button-2'),
-    buttonLong = document.getElementById('button-3'),
-    timerPathRemaining = document.querySelector('.timer__path-remaining');
+    buttonsBlock = document.querySelector('.buttons__block'),
+    timerPathRemaining = document.querySelector('.timer__path-remaining'),
+    timerButton = document.querySelector('.timer__button');
 
   // const для режимов работы таймера
   const POMODORO = 1200,
-    SHORT_BREAK = 300,
+    SHORT_BREAK = 300, // 300
     LONG_BREAK = 900,
     FULL_DASH_ARRAY = 283;
 
@@ -17,7 +16,8 @@ export const timer = () => {
   let timePassed = 0,
     TIME_LIMIT = POMODORO,
     timeLeft,
-    timerInterval = null;
+    timerInterval = null,
+    countDown = false;
 
 
 
@@ -39,7 +39,6 @@ export const timer = () => {
   // функция рвсчета доли начального времени
   const calculateTimeFraction = () => {
     const rawTimeFraction = timeLeft / TIME_LIMIT;
-
     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
   }
 
@@ -55,6 +54,8 @@ export const timer = () => {
   // функция очистить интервал
   const onTimesUp = () => {
     clearInterval(timerInterval);
+    countDown = false;
+    timerButton.textContent = 'start';
   }
 
   // функция запуска таймера
@@ -68,29 +69,73 @@ export const timer = () => {
 
       if (timeLeft === 0) {
         onTimesUp();
+        soundBell();
+        timerButton.textContent = 'restart';
+        timePassed = 0;
       }
     }, 1000);
   }
 
-  startTimer();
+  // функция изменнения начального времени таймера
+  const toggleTimerTime = (limit) => {
+    TIME_LIMIT = limit;
+    timer.textContent = howTimeLeft(TIME_LIMIT);
+    timePassed = 0;
+  }
+
+  // start/pause timer
+  const toggleTimerButton = () => {
+    if (!countDown) {
+      startTimer();
+      countDown = true;
+      timerButton.textContent = 'pause';
+    } else {
+      onTimesUp();
+    }
+  }
+
+  // звук таймера
+  const soundBell = () => {
+    let audio = new Audio();
+    audio.src = '../../files/timer-bell.mp3';
+    audio.autoplay = true;
+  }
+
+  // звук клика
+  const soundClick = () => {
+    let audio = new Audio();
+    audio.src = '../../files/mouse_click_06.wav';
+    audio.autoplay = true;
+  }
+
+  const timerOperationMode = (limit) => {
+    toggleTimerTime(limit);
+    onTimesUp();
+    timerButton.textContent = 'start';
+    countDown = false;
+  }
+
+  // вызов функций
+  timer.textContent = howTimeLeft(TIME_LIMIT);
 
   // слушатели событий
+  buttonsBlock.addEventListener('click', (e) => {
+    let target = e.target;
 
-  // нужно будет красиво переписать
-  buttonPomodoro.addEventListener('click', () => {
-    TIME_LIMIT = POMODORO;
-    timePassed = 0;
+    if (target.closest('#button-1')) {
+      soundClick();
+      timerOperationMode(POMODORO);
+    } else if (target.closest('#button-2')) {
+      soundClick();
+      timerOperationMode(SHORT_BREAK);
+    } else if (target.closest('#button-3')) {
+      soundClick();
+      timerOperationMode(LONG_BREAK);
+    }
   })
 
-  buttonShort.addEventListener('click', () => {
-    TIME_LIMIT = SHORT_BREAK;
-    timePassed = 0;
+  timerButton.addEventListener('click', () => {
+    soundClick();
+    toggleTimerButton();
   })
-
-  buttonLong.addEventListener('click', () => {
-    TIME_LIMIT = LONG_BREAK;
-    timePassed = 0;
-  })
-  //
-
 }
