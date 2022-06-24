@@ -51,14 +51,54 @@
   <div id="popup" class="popup">
     <div class="popup__body">
       <div class="popup__content">
-        <div class="popup__row">
+        <div class="popup__row popup__title-row">
           <h2 class="popup__title">Settings</h2>
           <a href="" class="popup__close close-popup">
             <img src="./img/icon/close.svg" alt="close">
           </a>
         </div>
-        
-
+        <div class="popup__row popup__row--time">
+          <h3 class="popup__subtitle">TIME (MINUTES)</h3>
+          <div class="popup__inputs-wrap">
+            <div class="popup__input-block input-block">
+              <p class="input-block__text">pomodoro</p>
+              <input type="number" class="input-block__value" value="20">
+            </div>
+            <div class="popup__input-block input-block">
+              <p class="input-block__text">short break</p>
+              <input type="number" class="input-block__value" value="5">
+            </div>
+            <div class="popup__input-block input-block">
+              <p class="input-block__text">long break</p>
+              <input type="number" class="input-block__value" value="15">
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="popup__row">
+          <h3 class="popup__subtitle">font</h3>
+          <div class="popup__buttons fonts-buttons">
+            <input type="radio" name="fonts-btn" id="fonts-button-1" class="radio-button" value="" checked>
+            <label for="fonts-button-1" class="popup__buttons-item fonts-buttons__item">Aa</label>
+            <input type="radio" name="fonts-btn" id="fonts-button-2" class="radio-button" value="">
+            <label for="fonts-button-2" class="popup__buttons-item fonts-buttons__item">Aa</label>
+            <input type="radio" name="fonts-btn" id="fonts-button-3" class="radio-button" value="">
+            <label for="fonts-button-3" class="popup__buttons-item fonts-buttons__item">Aa</label>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="popup__row">
+          <h3 class="popup__subtitle">color</h3>
+          <div class="popup__buttons color-buttons">
+            <input type="radio" name="color-btn" id="color-button-1" class="radio-button" value="" checked>
+            <label for="color-button-1" class="popup__buttons-item color-buttons__item"></label>
+            <input type="radio" name="color-btn" id="color-button-2" class="radio-button" value="">
+            <label for="color-button-2" class="popup__buttons-item color-buttons__item"></label>
+            <input type="radio" name="color-btn" id="color-button-3" class="radio-button" value="">
+            <label for="color-button-3" class="popup__buttons-item color-buttons__item"></label>
+          </div>
+        </div>
+        <button class="popup__button">Apply</button>
       </div>
     </div>
   </div>

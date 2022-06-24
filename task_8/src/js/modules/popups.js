@@ -1,4 +1,4 @@
-export const popup = () => {
+export const popups = () => {
   const popupLinks = document.querySelectorAll('.popup__link'),
     popupCloseIcon = document.querySelectorAll('.close-popup'),
     lockPadding = document.querySelectorAll('.lock-padding'),
@@ -40,14 +40,14 @@ export const popup = () => {
       }
       currentPopup.classList.add('open');
       currentPopup.addEventListener("click", (e) => {
-          if (!e.target.closest('.popup_content')) {
+          if (!e.target.closest('.popup__content')) {
             popupClose(e.target.closest('.popup'));
           }
       });
     }
   }
 
-  function popupClose(popupActive, doUnlock = true){
+  const popupClose = (popupActive, doUnlock = true) => {
     if (unlock) {
       popupActive.classList.remove('open');
       if (doUnlock) {
@@ -93,7 +93,7 @@ export const popup = () => {
     }, timeout);
   }
 
-  document.addEventListener('keydown', () => {
+  document.addEventListener('keydown', (e) => {
     if (e.which === 27) {
       const popupActive = document.querySelector('.popup.open');
       popupClose(popupActive);
