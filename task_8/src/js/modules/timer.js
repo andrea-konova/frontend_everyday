@@ -3,13 +3,20 @@ export const timer = () => {
   // const из документа
   const timer = document.querySelector('.timer__counter'),
     buttonsBlock = document.querySelector('.buttons__block'),
+    fontsButtons = document.querySelector('.fonts-buttons'),
+    colorButtons = document.querySelector('.color-buttons'),
     timerPathRemaining = document.querySelector('.timer__path-remaining'),
+    applyButton = document.querySelector('.popup__button'),
     timerButton = document.querySelector('.timer__button');
 
+  const pomodoro = document.getElementById('pomodoro'),
+    shortBreak = document.getElementById('short-break'),
+    longBreak = document.getElementById('long-break');
+
   // const для режимов работы таймера
-  const POMODORO = 1200,
-    SHORT_BREAK = 300, // 300
-    LONG_BREAK = 900,
+  let POMODORO = pomodoro.value * 60,
+    SHORT_BREAK = shortBreak.value * 60,
+    LONG_BREAK = longBreak.value * 60,
     FULL_DASH_ARRAY = 283;
 
   // переменные для функций
@@ -17,6 +24,8 @@ export const timer = () => {
     TIME_LIMIT = POMODORO,
     timeLeft,
     timerInterval = null,
+    font = 'KumbhSans',
+    colorTheme = '#F87070',
     countDown = false;
 
 
@@ -78,6 +87,10 @@ export const timer = () => {
 
   // функция изменнения начального времени таймера
   const toggleTimerTime = (limit) => {
+    if (limit <= 0) {
+      alert('Пожалуйства введите время в минутах > 0');
+      return
+    }
     TIME_LIMIT = limit;
     timer.textContent = howTimeLeft(TIME_LIMIT);
     timePassed = 0;
@@ -108,11 +121,31 @@ export const timer = () => {
     audio.autoplay = true;
   }
 
+  // переключение режимов таймера
   const timerOperationMode = (limit) => {
     toggleTimerTime(limit);
     onTimesUp();
     timerButton.textContent = 'start';
     countDown = false;
+  }
+
+  // изменение значения времени
+  const changeValue = () => {
+    POMODORO = pomodoro.value * 60;
+    SHORT_BREAK = shortBreak.value * 60;
+    LONG_BREAK = longBreak.value * 60;
+  }
+
+  // изменение шрифта
+  const changeFont = (font) => {
+    const html = document.querySelector('html');
+    html.style.fontFamily = `"${font}", sans-serif`;
+  }
+
+  // изменение цвета
+  const changeColor = (colorTheme) => {
+    let root = document.documentElement;
+    root.style.setProperty('--color-1', colorTheme);
   }
 
   // вызов функций
@@ -121,21 +154,52 @@ export const timer = () => {
   // слушатели событий
   buttonsBlock.addEventListener('click', (e) => {
     let target = e.target;
+    soundClick();
 
     if (target.closest('#button-1')) {
-      soundClick();
       timerOperationMode(POMODORO);
     } else if (target.closest('#button-2')) {
-      soundClick();
       timerOperationMode(SHORT_BREAK);
     } else if (target.closest('#button-3')) {
-      soundClick();
       timerOperationMode(LONG_BREAK);
+    }
+  })
+
+  fontsButtons.addEventListener('click', (e) => {
+    let target = e.target;
+    soundClick();
+
+    if (target.closest('#fonts-button-1')) {
+      font = 'KumbhSans';
+    } else if (target.closest('#fonts-button-2')) {
+      font = 'RobotoSlab';
+    } else if (target.closest('#fonts-button-3')) {
+      font = 'SpaceMono';
+    }
+  })
+
+  colorButtons.addEventListener('click', (e) => {
+    let target = e.target;
+    soundClick();
+
+    if (target.closest('#color-button-1')) {
+      colorTheme = '#F87070';
+    } else if (target.closest('#color-button-2')) {
+      colorTheme = '#70F3F8';
+    } else if (target.closest('#color-button-3')) {
+      colorTheme = '#D881F8';
     }
   })
 
   timerButton.addEventListener('click', () => {
     soundClick();
     toggleTimerButton();
+  })
+
+  applyButton.addEventListener('click', () => {
+    soundClick();
+    changeValue();
+    changeFont(font);
+    changeColor(colorTheme);
   })
 }

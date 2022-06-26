@@ -4,6 +4,9 @@
 @import "settings";
 @import "templates/popup";
 
+:root {
+  --color-1: #F87070;
+}
 .header {
   padding: 48px 0;
 }
@@ -48,12 +51,12 @@
 }
 .label:hover {
   cursor: pointer;
-  background-color: $color-1;
+  background-color: var(--color-1);
   opacity: 1;
   color: $bg-color-1;
 }
 input:checked+label.label {
-  background-color: $color-1;
+  background-color: var(--color-1);
   opacity: 1;
   color: $bg-color-1;
 }
@@ -103,7 +106,7 @@ input:checked+label.label {
     transform-origin: center;
     transition: 1s linear all;
     fill-rule: nonzero;
-    stroke: $color-1;
+    stroke: var(--color-1);
     // stroke: currentColor;
   }
   &__body {
@@ -122,7 +125,6 @@ input:checked+label.label {
   }
   &__counter {
     margin: 35px 0 0;
-    font-family: 'Kumbh Sans', sans-serif;
     font-weight: 700;
     font-size: 100px;
     line-height: 124px;
