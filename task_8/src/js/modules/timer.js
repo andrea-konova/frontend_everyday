@@ -155,14 +155,14 @@ export const timer = () => {
   // звук таймера
   const soundBell = () => {
     let audio = new Audio();
-    audio.src = '../files/timer-bell.mp3';
+    audio.src = './files/timer-bell.mp3';
     audio.autoplay = true;
   }
 
   // звук клика
   const soundClick = () => {
     let audio = new Audio();
-    audio.src = '../files/mouse_click_06.wav';
+    audio.src = './files/mouse_click_06.wav';
     audio.autoplay = true;
   }
 
