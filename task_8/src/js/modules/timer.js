@@ -24,11 +24,56 @@ export const timer = () => {
     TIME_LIMIT = POMODORO,
     timeLeft,
     timerInterval = null,
-    font = 'KumbhSans',
+    font = 'Kumbh Sans',
     colorTheme = '#F87070',
     countDown = false;
 
+  // работа с local storage
+  const getLocalStorage = () => {
+    // шрифт
+    if (localStorage.getItem('fontTheme') !== null) {
+      font = localStorage.getItem('fontTheme');
+    } else {
+      font = font;
+    }
+    changeFont(font);
+    // цвет
+    if (localStorage.getItem('colorTheme') !== null) {
+      colorTheme = localStorage.getItem('colorTheme');
+    } else {
+      colorTheme = colorTheme;
+    }
+    changeColor(colorTheme);
+    // получение значений из inputов
+    // pomodoro время
+    if (localStorage.getItem('pomodoro') !== null) {
+      pomodoro.value = localStorage.getItem('pomodoro');
+    } else {
+      pomodoro.value = pomodoro.value;
+    }
+    // короткий перерыв время
+    if (localStorage.getItem('shortBreak') !== null) {
+      shortBreak.value = localStorage.getItem('shortBreak');
+    } else {
+      shortBreak.value = shortBreak.value;
+    }
+    // длинный перерыв время
+    if (localStorage.getItem('longBreak') !== null) {
+      longBreak.value = localStorage.getItem('longBreak');
+    } else {
+      longBreak.value = longBreak.value;
+    }
+    changeValue();
+  }
 
+  // записываю данные в local storage
+  const setLocalStorage = () => {
+    localStorage.setItem('fontTheme', font);
+    localStorage.setItem('colorTheme', colorTheme);
+    localStorage.setItem('pomodoro', pomodoro.value);
+    localStorage.setItem('shortBreak', shortBreak.value);
+    localStorage.setItem('longBreak', longBreak.value);
+  }
 
   // функция показать сколько осталось времени
   const howTimeLeft = (time) => {
@@ -134,6 +179,22 @@ export const timer = () => {
     POMODORO = pomodoro.value * 60;
     SHORT_BREAK = shortBreak.value * 60;
     LONG_BREAK = longBreak.value * 60;
+
+    let item = document.querySelector('input:checked + label.label');
+
+    switch (item.textContent) {
+      case 'pomodoro':
+        timerOperationMode(POMODORO);
+        break;
+      case 'short break':
+        timerOperationMode(SHORT_BREAK);
+        break;
+      case 'long break':
+        timerOperationMode(LONG_BREAK);
+        break;
+      default:
+        break;
+    }
   }
 
   // изменение шрифта
@@ -201,5 +262,10 @@ export const timer = () => {
     changeValue();
     changeFont(font);
     changeColor(colorTheme);
+    setLocalStorage();
+  })
+
+  document.addEventListener('DOMContentLoaded', () => {
+    getLocalStorage();
   })
 }
