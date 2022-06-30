@@ -2,6 +2,7 @@ export const popups = () => {
   const popupLinks = document.querySelectorAll('.popup__link'),
     popupCloseIcon = document.querySelectorAll('.close-popup'),
     lockPadding = document.querySelectorAll('.lock-padding'),
+    popupButton = document.querySelector('.popup__button'),
     body = document.querySelector('body');
 
   let unlock = true;
@@ -98,5 +99,10 @@ export const popups = () => {
       const popupActive = document.querySelector('.popup.open');
       popupClose(popupActive);
     }
+  })
+
+  popupButton.addEventListener('click', () => {
+    const popupActive = document.querySelector('.popup.open');
+      popupClose(popupActive);
   })
 }

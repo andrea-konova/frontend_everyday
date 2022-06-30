@@ -23,6 +23,10 @@ export const timer = () => {
   let timePassed = 0,
     TIME_LIMIT = POMODORO,
     timeLeft,
+    timeStorage,
+    activeTab = 0,
+    activeTabFont = 0,
+    activeTabColor = 0,
     timerInterval = null,
     font = 'KumbhSans',
     colorTheme = '#F87070',
@@ -75,6 +79,100 @@ export const timer = () => {
     localStorage.setItem('longBreak', longBreak.value);
   }
 
+  // записываю значение timePassed в local storage
+  const setTimePassedToLocalStorage = () => {
+    localStorage.setItem('timePassed', timePassed);
+  }
+
+  // получаю значение timePassed из local storage
+  const getTimePassedFromLocalStorage = () => {
+    if (localStorage.getItem('timePassed') !== null) {
+      timePassed = Number(localStorage.getItem('timePassed'));
+    } else {
+      timePassed = 0;
+    }
+  }
+
+  // обновляю значение timePassed
+  const updateTimerContent = () => {
+    getTimePassedFromLocalStorage();
+    timeLeft = TIME_LIMIT - timePassed;
+    timeStorage = howTimeLeft(timeLeft);
+    timer.textContent = timeStorage;
+  }
+
+  // получаю активный таб
+  const tabInput = buttonsBlock.querySelectorAll('input');
+
+  const getActiveTab = () => {
+    for (let i = 0; i < tabInput.length; i++) {
+      if (localStorage.getItem('activeTab') !== null) {
+        activeTab = Number(localStorage.getItem('activeTab'));
+      } else {
+        activeTab = activeTab;
+      }
+      tabInput[activeTab].checked = true;
+    }
+  }
+
+  // записываю активный таб
+  const setActiveTab = () => {
+    for (let i = 0; i < tabInput.length; i++) {
+      if (tabInput[i].checked) {
+        activeTab = i;
+        localStorage.setItem('activeTab', activeTab);
+      }
+    }
+  }
+
+  // получаю активный таб шрифта
+  const tabInputFont = fontsButtons.querySelectorAll('input');
+
+  const getActiveTabFont = () => {
+    for (let i = 0; i < tabInputFont.length; i++) {
+      if (localStorage.getItem('activeTabFont') !== null) {
+        activeTabFont = Number(localStorage.getItem('activeTabFont'));
+      } else {
+        activeTabFont = activeTabFont;
+      }
+      tabInputFont[activeTabFont].checked = true;
+    }
+  }
+
+  // записываю активный таб шрифта
+  const setActiveTabFont = () => {
+    for (let i = 0; i < tabInputFont.length; i++) {
+      if (tabInputFont[i].checked) {
+        activeTabFont = i;
+        localStorage.setItem('activeTabFont', activeTabFont);
+      }
+    }
+  }
+
+  // получаю активный таб цвета
+  const tabInputColor = colorButtons.querySelectorAll('input');
+
+  const getActiveTabColor = () => {
+    for (let i = 0; i < tabInputColor.length; i++) {
+      if (localStorage.getItem('activeTabColor') !== null) {
+        activeTabColor = Number(localStorage.getItem('activeTabColor'));
+      } else {
+        activeTabColor = activeTabColor;
+      }
+      tabInputColor[activeTabColor].checked = true;
+    }
+  }
+
+  // записываю активный таб цвета
+  const setActiveTabColor = () => {
+    for (let i = 0; i < tabInputColor.length; i++) {
+      if (tabInputColor[i].checked) {
+        activeTabColor = i;
+        localStorage.setItem('activeTabColor', activeTabColor);
+      }
+    }
+  }
+
   // функция показать сколько осталось времени
   const howTimeLeft = (time) => {
     let minutes = Math.floor(time / 60);
@@ -118,8 +216,11 @@ export const timer = () => {
       timePassed = timePassed += 1;
       timeLeft = TIME_LIMIT - timePassed;
 
-      timer.textContent = howTimeLeft(timeLeft);
+      timeStorage = howTimeLeft(timeLeft);
+      timer.textContent = timeStorage;
+
       setCircleDasharray();
+      setTimePassedToLocalStorage();
 
       if (timeLeft === 0) {
         onTimesUp();
@@ -179,6 +280,7 @@ export const timer = () => {
     POMODORO = pomodoro.value * 60;
     SHORT_BREAK = shortBreak.value * 60;
     LONG_BREAK = longBreak.value * 60;
+    getActiveTab();
 
     let item = document.querySelector('input:checked + label.label');
 
@@ -210,7 +312,7 @@ export const timer = () => {
   }
 
   // вызов функций
-  timer.textContent = howTimeLeft(TIME_LIMIT);
+  timer.textContent = timeStorage;
 
   // слушатели событий
   buttonsBlock.addEventListener('click', (e) => {
@@ -224,6 +326,10 @@ export const timer = () => {
     } else if (target.closest('#button-3')) {
       timerOperationMode(LONG_BREAK);
     }
+
+    setActiveTab();
+    timePassed = 0;
+    setTimePassedToLocalStorage();
   })
 
   fontsButtons.addEventListener('click', (e) => {
@@ -263,9 +369,16 @@ export const timer = () => {
     changeFont(font);
     changeColor(colorTheme);
     setLocalStorage();
+    setActiveTabFont();
+    setActiveTabColor();
   })
 
   document.addEventListener('DOMContentLoaded', () => {
     getLocalStorage();
+    updateTimerContent();
+    getTimePassedFromLocalStorage();
+    getActiveTab();
+    getActiveTabFont();
+    getActiveTabColor();
   })
 }
