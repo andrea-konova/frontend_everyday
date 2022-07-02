@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/andrea-konova/gulp-2022#readme",
   "devDependencies": {
-    "browser-sync": "latest",
+    "browser-sync": "^2.27.10",
     "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",

@@ -190,6 +190,7 @@ export const timer = () => {
 
   // функция рвсчета доли начального времени
   const calculateTimeFraction = () => {
+    timeLeft = TIME_LIMIT - timePassed;
     const rawTimeFraction = timeLeft / TIME_LIMIT;
     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
   }
@@ -329,6 +330,7 @@ export const timer = () => {
 
     setActiveTab();
     timePassed = 0;
+    setCircleDasharray();
     setTimePassedToLocalStorage();
   })
 
