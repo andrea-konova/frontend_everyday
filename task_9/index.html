@@ -20,18 +20,18 @@
     <div class="container">
       <div class="todo">
         <div class="todo__input">
-          <input type="checkbox" id="1" class="todo__add todo__checkbox">
-          <label for="1"></label>
+          <input type="checkbox" id="add" class="todo__add todo__checkbox">
+          <label for="add"></label>
           <input class="todo__text" type="text" placeholder="Create a new todo…">
         </div>
-        <ul class="todo__items">
-          <!-- <li class="todo__item"">
-            <input type="checkbox" id="2" class="todo__complete todo__checkbox">
-            <label for="2"></label>
-            <span class="todo__task">Jog around the park 3x</span>
-            <button class="delete__todo"></button>
-          </li> -->
-        </ul>
+        <ul class="todo__items"></ul>
+        <div class="empty-state">
+          <img src="img/to-do-list.png" alt="list" class="checklist-icon">
+          <div class="empty-state__wrap">
+            <h2 class="empty-state__title">Add your first todo</h2>
+            <p class="empty-state__description">What do you want to get done today?</p>
+          </div>
+        </div>
         <div class="todo__info">
           <p class="small-text"><span class="number-items">5</span> items left</p>
           <div class="buttons__block">

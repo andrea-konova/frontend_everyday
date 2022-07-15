@@ -71,19 +71,40 @@ body {
 .todo__input {
   display: flex;
   align-items: center;
+  margin-bottom: 24px;
   padding: 24px 20px;
   border-radius: 5px;
   background-color: var(--white);
+}
+input[type="checkbox"] {
+  display: none;
 }
 .todo__checkbox {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
+.todo__checkbox {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid var(--dark);;
+  border-radius: 50%;
+  margin-right: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
 .todo__checkbox + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
+}
+.todo__checkbox:hover + label::before  {
+  cursor: pointer;
+  border-color: #0b76ef;
 }
 .todo__checkbox + label::before {
   content: '';
@@ -99,27 +120,10 @@ body {
   background-position: center center;
   background-size: 50% 50%;
 }
-.todo__checkbox:checked + label::before {
+.done .todo__checkbox + label::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
   background-image: url("../img/svg/path.svg");
-}
-.todo__checkbox:not(:disabled):not(:checked)+label:hover::before {
-  cursor: pointer;
-  border-color: #b3d7ff;
-}
-/* стили для активного состояния чекбокса (при нажатии на него) */
-.todo__checkbox:not(:disabled):active+label::before {
-  background-color: #b3d7ff;
-  border-color: #b3d7ff;
-}
-/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-.todo__checkbox:focus:not(:checked)+label::before {
-  border-color: #80bdff;
-}
-/* стили для чекбокса, находящегося в состоянии disabled */
-.todo__checkbox:disabled+label::before {
-  background-color: #e9ecef;
 }
 .todo__text {
   border: none;
@@ -130,15 +134,17 @@ body {
   color: var(--text-dark);
 }
 .todo__items {
-  margin: 24px 0 0;
+  margin: 0;
   padding-inline-start: 0px;
+}
+.todo__item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .todo__item {
   display: flex;
   align-items: center;
   padding: 20px 24px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   background-color: var(--white);
   border-bottom: 1px solid var(--dark);
   transition: all 0.3s;
@@ -146,8 +152,13 @@ body {
 .todo__item:hover {
   cursor: pointer;
 }
+.done .todo__task {
+  text-decoration: line-through;
+}
 .todo__task {
   flex-grow: 1;
+  max-width: 420px;
+  overflow: hidden;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
@@ -228,6 +239,41 @@ input:checked+label.label {
 .completed__button:hover {
   cursor: pointer;
   color: var(--todo-task);
+}
+.empty-state {
+  display: none;
+  align-items: center;
+  padding: 20px 24px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--dark);
+  color: var(--todo-task);
+}
+.checklist-icon {
+  margin-right: 24px;
+}
+.empty-state__title {
+  margin: 0 0 10px 0;
+  flex-grow: 1;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.25px;
+}
+.empty-state__description {
+  margin: 0;
+  flex-grow: 1;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+}
+.todo__items:empty {
+  display: none;
+}
+.todo__items:empty + .empty-state {
+  display: flex;
 }
 .footer {
   padding: 50px 0;
