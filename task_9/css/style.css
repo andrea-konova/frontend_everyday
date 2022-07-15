@@ -141,13 +141,37 @@ body {
   border-top-right-radius: 5px;
   background-color: var(--white);
   border-bottom: 1px solid var(--dark);
+  transition: all 0.3s;
+}
+.todo__item:hover {
+  cursor: pointer;
 }
 .todo__task {
+  flex-grow: 1;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
   letter-spacing: -0.25px;
   color: var(--todo-task);
+}
+.delete__todo {
+  opacity: 0;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background-color: transparent;
+  background-image: url('../img/svg/close.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  outline: none;
+  transition: opacity 0.5s ease;
+}
+.delete__todo:hover {
+  cursor: pointer;
+}
+.todo__item:hover .delete__todo {
+  opacity: 1;
 }
 .todo__info {
   display: flex;
