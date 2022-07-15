@@ -113,17 +113,17 @@ input[type="checkbox"] {
   height: 24px;
   flex-shrink: 0;
   flex-grow: 0;
-  border: 1px solid var(--dark);;
+  border: 1px solid var(--dark);
   border-radius: 50%;
   margin-right: 24px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 50% 50%;
+  background-size: contain;
 }
 .done .todo__checkbox + label::before {
   border-color: #0b76ef;
   background-color: #0b76ef;
-  background-image: url("../img/svg/path.svg");
+  background-image: url("../img/svg/oval.svg") ;
 }
 .todo__text {
   border: none;
@@ -230,13 +230,13 @@ input[type="checkbox"] {
 input:checked+label.label {
   color: #3A7CFD;
 }
-.completed__button {
+.clear__button {
   padding: 0;
   border: none;
   color: var(--text-dark);
   background-color: transparent;
 }
-.completed__button:hover {
+.clear__button:hover {
   cursor: pointer;
   color: var(--todo-task);
 }

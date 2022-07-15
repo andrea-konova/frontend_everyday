@@ -1,6 +1,7 @@
 const addButton = document.querySelector('.todo__add'),
   input = document.querySelector('.todo__text'),
-  list = document.querySelector('.todo__items');
+  list = document.querySelector('.todo__items'),
+  clearAllButton = document.querySelector('.clear__button');
 
 let todoItems = [];
 
@@ -77,6 +78,19 @@ addButton.addEventListener('click', (event) => {
     addTodo(text);
     input.value = '';
     input.focus();
+  }
+})
+
+clearAllButton.addEventListener('click', () => {
+  const cloneTodoItems = todoItems.slice(0);
+
+  for (let i = 0; i < cloneTodoItems.length; i++) {
+    const todo = cloneTodoItems[i];
+
+    if (todo.checked) {
+      const itemKey = todo.id;
+      deleteTodo(itemKey);
+    }
   }
 })
 
