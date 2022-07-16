@@ -1,7 +1,9 @@
 const addButton = document.querySelector('.todo__add'),
   input = document.querySelector('.todo__text'),
   list = document.querySelector('.todo__items'),
-  clearAllButton = document.querySelector('.clear__button');
+  clearAllButton = document.querySelector('.clear__button'),
+  itemsLeft = document.querySelector('.number-items'),
+  buttonsBlock = document.querySelector('.buttons__block');
 
 let todoItems = [];
 
@@ -34,6 +36,8 @@ const renderTodo = (todo) => {
   } else {
     list.append(node);
   }
+
+  howItemsLeft();
 }
 
 // добавить новое дело
@@ -67,9 +71,56 @@ const deleteTodo = (key) => {
 
   todoItems = todoItems.filter(item => item.id !== Number(key));
   renderTodo(todo);
+  howItemsLeft();
 }
 
-// слушател событий
+const howItemsLeft = () => {
+  let n = 0;
+  for (let i = 0; i < todoItems.length; i++) {
+    const todo = todoItems[i];
+    if (!todo.checked) {
+      n++;
+    }
+  }
+  itemsLeft.textContent = n;
+}
+
+const sortTodo = (todo) => {
+  const listItems = document.querySelectorAll('.todo__item');
+
+  switch (todo) {
+    case 'all':
+      for (let i = 0; i < listItems.length; i++) {
+        const item = listItems[i];
+        item.classList.remove('hidden');
+      }
+      break;
+    case 'active':
+      for (let i = 0; i < listItems.length; i++) {
+        const item = listItems[i];
+        if (item.classList.contains('done')) {
+          item.classList.add('hidden');
+        } else {
+          item.classList.remove('hidden');
+        }
+      }
+      break;
+    case 'completed':
+      for (let i = 0; i < listItems.length; i++) {
+        const item = listItems[i];
+        if (!item.classList.contains('done')) {
+          item.classList.add('hidden');
+        } else {
+          item.classList.remove('hidden');
+        }
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+// слушатели событий
 addButton.addEventListener('click', (event) => {
   event.preventDefault();
 
@@ -86,7 +137,6 @@ clearAllButton.addEventListener('click', () => {
 
   for (let i = 0; i < cloneTodoItems.length; i++) {
     const todo = cloneTodoItems[i];
-
     if (todo.checked) {
       const itemKey = todo.id;
       deleteTodo(itemKey);
@@ -106,6 +156,18 @@ list.addEventListener('click', event => {
   }
 });
 
+buttonsBlock.addEventListener('click', (e) => {
+  let target = e.target;
+
+  if (target.closest('#button-1')) {
+    sortTodo('all');
+  } else if (target.closest('#button-2')) {
+    sortTodo('active');
+  } else if (target.closest('#button-3')) {
+    sortTodo('completed');
+  }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
   const ref = localStorage.getItem('todoItemsRef');
   if (ref) {
@@ -114,4 +176,5 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTodo(t);
     });
   }
+  howItemsLeft();
 });
