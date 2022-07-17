@@ -10,9 +10,11 @@
 :root {
   --black: #000000;
   --dark: #E3E4F1;
+  --todo-dark: #E3E4F1;
   --white: #ffffff;
   --text-dark: #9495A5;
   --todo-task: #494C6B;
+  --todo-task-c: #D1D2DA;
   --gradient: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
 }
 html {
@@ -22,7 +24,6 @@ body {
   margin: 0;
   color: var(--white);
   background-color: var(--dark);
-  /* background-image: url('../image/img/bg-1.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -37,6 +38,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.header-dark {
+  background-image: url(../img/night.jpg);
+}
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -48,7 +52,7 @@ body {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 15px;
-  color: var(--white);
+  color: #ffffff;
   text-transform: uppercase;
 }
 .toggle-button {
@@ -59,6 +63,9 @@ body {
   background-image: url(../img/svg/moon.svg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.toggle-button-dark {
+  background-image: url(../img/svg/sun.svg);
 }
 .toggle-button:hover {
   cursor: pointer;
@@ -90,7 +97,7 @@ input[type="checkbox"] {
   height: 24px;
   flex-shrink: 0;
   flex-grow: 0;
-  border: 1px solid var(--dark);;
+  border: 1px solid var(--todo-dark);
   border-radius: 50%;
   margin-right: 24px;
   background-repeat: no-repeat;
@@ -113,7 +120,7 @@ input[type="checkbox"] {
   height: 24px;
   flex-shrink: 0;
   flex-grow: 0;
-  border: 1px solid var(--dark);
+  border: 1px solid var(--todo-dark);
   border-radius: 50%;
   margin-right: 24px;
   background-repeat: no-repeat;
@@ -132,10 +139,15 @@ input[type="checkbox"] {
   line-height: 18px;
   letter-spacing: -0.25px;
   color: var(--text-dark);
+  background-color: var(--white);
 }
 .todo__items {
   margin: 0;
   padding-inline-start: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  background-color: var(--white);
 }
 .todo__item:first-child {
   border-top-left-radius: 5px;
@@ -145,8 +157,8 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   padding: 20px 24px;
-  background-color: var(--white);
-  border-bottom: 1px solid var(--dark);
+  /* background-color: var(--white); */
+  border-bottom: 1px solid var(--todo-dark);
   transition: all 0.3s;
 }
 .todo__item:hover {
@@ -154,6 +166,7 @@ input[type="checkbox"] {
 }
 .done .todo__task {
   text-decoration: line-through;
+  color: var(--todo-task-c);
 }
 .todo__task {
   flex-grow: 1;
