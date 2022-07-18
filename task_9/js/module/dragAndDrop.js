@@ -20,10 +20,14 @@ const dragAndDrop = () => {
   // слушатели событий
   tasksListElement.addEventListener('dragstart', (event) => {
     event.target.classList.add('selected');
+    setTimeout(() => {
+      event.target.classList.add('hidden');
+    },0)
   })
 
   tasksListElement.addEventListener('dragend', (event) => {
     event.target.classList.remove('selected');
+    event.target.classList.remove('hidden');
   });
 
   tasksListElement.addEventListener('dragover', (event) => {

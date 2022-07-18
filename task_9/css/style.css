@@ -29,7 +29,7 @@ body {
 }
 .container {
   margin: 0 auto;
-  width: 95%;
+  width: 90%;
   max-width: 540px;
 }
 .header {
@@ -79,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 24px;
-  padding: 24px 20px;
+  padding: 20px 24px;
   border-radius: 5px;
   background-color: var(--white);
 }
@@ -108,10 +108,7 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   user-select: none;
-}
-.todo__checkbox:hover + label::before  {
-  cursor: pointer;
-  border-color: #0b76ef;
+  position: relative;
 }
 .todo__checkbox + label::before {
   content: '';
@@ -127,10 +124,58 @@ input[type="checkbox"] {
   background-position: center center;
   background-size: contain;
 }
+.todo__checkbox:hover + label::before  {
+  cursor: pointer;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  top: 1px;
+  left: 1px;
+  margin-right: 26px;
+  margin-bottom: 2px;
+  border-color: transparent;
+  background-color: var(--white);
+  z-index: 3;
+}
+.todo__checkbox:hover + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 24px;
+  background-image: var(--gradient);
+  z-index: 2;
+}
+.done .todo__checkbox + label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 24px;
+  background-image: var(--gradient);
+  z-index: 2;
+}
 .done .todo__checkbox + label::before {
-  border-color: #0b76ef;
-  background-color: #0b76ef;
-  background-image: url("../img/svg/oval.svg") ;
+  cursor: pointer;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  top: 1px;
+  left: 1px;
+  margin-right: 26px;
+  margin-bottom: 2px;
+  border: none;
+  border-color: transparent;
+  background-image: url("../img/svg/oval.svg");
+  z-index: 3;
 }
 .todo__text {
   border: none;
@@ -149,15 +194,10 @@ input[type="checkbox"] {
   overflow: hidden;
   background-color: var(--white);
 }
-.todo__item:first-child {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
 .todo__item {
   display: flex;
   align-items: center;
   padding: 20px 24px;
-  /* background-color: var(--white); */
   border-bottom: 1px solid var(--todo-dark);
   transition: all 0.3s;
 }
@@ -302,4 +342,106 @@ input:checked+label.label {
   text-align: center;
   letter-spacing: -0.194444px;
   color: var(--text-dark);
+}
+@media screen and ( max-width: 576px ) {
+  .header {
+    padding: 48px 0 132px;
+  }
+  .title {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 10px;
+  }
+  .toggle-button {
+    width: 20px;
+    height: 20px;
+  }
+  .todo {
+    margin-top: -92px;
+    margin-bottom: 0;
+  }
+  .todo__input {
+    margin-bottom: 16px;
+    padding: 14px 20px;
+  }
+  .todo__item {
+    padding: 14px 20px;
+  }
+  .todo__text {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+  }
+  .todo__task {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+  }
+  .delete__todo {
+    opacity: 1;
+    width: 12px;
+    height: 12px;
+  }
+  .todo__checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  .todo__checkbox + label::before {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  .todo__checkbox:hover + label::before  {
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    left: 1px;
+    margin-right: 14px;
+  }
+  .todo__checkbox:hover + label::after {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  .done .todo__checkbox + label::after {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  .done .todo__checkbox + label::before {
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    left: 1px;
+    margin-right: 14px;
+  }
+  .small-text {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.166667px;
+  }
+  .todo__info {
+    position: relative;
+  }
+  .buttons__block {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    margin: 16px 0 40px;
+    padding: 15px 0 19px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--white);
+  }
+  .label {
+    padding: 0 9px;
+  }
+  .footer {
+    margin-top: 104px;
+    padding: 0 0 72px;
+  }
 }
