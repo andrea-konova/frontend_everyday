@@ -124,17 +124,25 @@ const todo = () => {
     }
   }
 
-
+  // проверка на пустую строку и вызов функции добавить дело
+  const checkNewTodo = () => {
+    const text = input.value.trim();
+      if (text !== '') {
+        addTodo(text);
+        input.value = '';
+        input.focus();
+      }
+  }
 
   // слушатели событий
   addButton.addEventListener('click', (event) => {
     event.preventDefault();
+    checkNewTodo();
+  })
 
-    const text = input.value.trim();
-    if (text !== '') {
-      addTodo(text);
-      input.value = '';
-      input.focus();
+  input.addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+      checkNewTodo();
     }
   })
 
@@ -151,7 +159,7 @@ const todo = () => {
   })
 
   list.addEventListener('click', event => {
-    if (event.target.classList.contains('complete__todo')) {
+    if (event.target.classList.contains('complete__todo') || event.target.classList.contains('todo__task')) {
       const itemKey = event.target.parentElement.dataset.key;
       toggleDone(itemKey);
     }
