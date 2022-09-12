@@ -29,7 +29,8 @@ function initMap() {
 
   let position = { lat: latitude, lng: longitude };
 
-  const  imageMarker = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+  const imageMarker = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+
 
   const map = new google.maps.Map(document.getElementById("map"), {
     center: position,
@@ -40,15 +41,16 @@ function initMap() {
     position: position,
     map: map,
     title: 'Your location',
-    icon: imageMarker,
+    icon: {
+      url: "/task_10/img/marker.png",
+      scaledSize: new google.maps.Size(64, 64)
+    }
   });
 }
 
 const getPosition = () => {
   longitude = data.longitude;
   latitude = data.latitude
-
-  console.log(data);
 
   initMap(longitude, latitude);
 }
@@ -78,8 +80,6 @@ const viewData = () => {
 
 const handleSubmit = (value) => {
 
-  console.log('форма отправляется');
-
   const mapContainer = document.getElementById('map');
 	mapContainer.innerHTML = '<h1 class="loading-text">Loading...</h1>';
 
@@ -87,20 +87,23 @@ const handleSubmit = (value) => {
   httpGetAsync(url);
 }
 
+const validateIPaddress = (ipAddress) => {
+  const ipRegExp = RegExp(`(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`);
+
+  if (ipRegExp.test(ipAddress)) {
+    handleSubmit(ipAddress);
+  } else {
+    alert("You have entered an invalid IP address!");
+    return (false);
+  }
+}
+
 const form = document.querySelector('.search-block');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const input = document.querySelector('.search-block__input');
-  const ipRegExp = RegExp(`(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`);
-
-  if (ipRegExp.test(input.value)) {
-    console.log(input.value);
-    handleSubmit(input.value);
-
-	} else {
-		alert('Please enter an ip address.');
-	}
+  validateIPaddress(input.value);
 
   input.value = '';
 })
