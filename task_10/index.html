@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Address Tracker</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="main-title">IP Address Tracker</h1>
+      <form class="search-block">
+        <input type="text" class="search-block__input" placeholder="Search for any IP address or domain">
+        <button type="submit" class="search-block__button"></button>
+      </form>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="data-block">
+        <div class="data-block__item item">
+          <p class="item__text">IP Address</p>
+          <h2 class="item__title" id="ip-address"></h2>
+        </div>
+        <div class="data-block__item item">
+          <p class="item__text">Location</p>
+          <h2 class="item__title" id="location"></h2>
+        </div>
+        <div class="data-block__item item">
+          <p class="item__text">Timezone</p>
+          <h2 class="item__title">UTC <span id="offset"></span></h2>
+        </div>
+        <div class="data-block__item item">
+          <p class="item__text">ISP</p>
+          <h2 class="item__title" id="isp"></h2>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div id="map">
+    </div>
+  </footer>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClt5xU2FMMv4o4TwISUfmc16_NVgtqFts"
+    async defer
+  ></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
