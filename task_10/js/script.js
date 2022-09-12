@@ -11,8 +11,8 @@ function httpGetAsync(url, callback) {
     if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
       // callback(xmlHttp.responseText);
       data = JSON.parse(xmlHttp.responseText);
-      console.log(data.longitude);
-      console.log(data.latitude);
+      // console.log(data.longitude);
+      // console.log(data.latitude);
       getPosition();
       viewData();
     }
@@ -42,7 +42,7 @@ function initMap() {
     map: map,
     title: 'Your location',
     icon: {
-      url: "/task_10/img/marker.png",
+      url: "./img/marker.png",
       scaledSize: new google.maps.Size(64, 64)
     }
   });
