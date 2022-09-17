@@ -1,3 +1,4 @@
+const mapContainer = document.querySelector('.map');
 
 let url,
   longitude,
@@ -5,16 +6,18 @@ let url,
 
 let data;
 
-function httpGetAsync(url, callback) {
+function httpGetAsync(url) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function() {
-    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-      // callback(xmlHttp.responseText);
+    if (xmlHttp.readyState === 4 && xmlHttp.status === 400) {
+      alert("You have entered an invalid IP address! Please try again!");
+      const ipAddress = document.getElementById('ip-address');
+      handleSubmit(ipAddress.textContent);
+    } else if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
       data = JSON.parse(xmlHttp.responseText);
-      // console.log(data.longitude);
-      // console.log(data.latitude);
       getPosition();
       viewData();
+      mapContainer.classList.remove('_sending');
     }
   }
   xmlHttp.open("GET", url, true); // true for asynchronous
@@ -28,9 +31,6 @@ httpGetAsync(url);
 function initMap() {
 
   let position = { lat: latitude, lng: longitude };
-
-  const imageMarker = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-
 
   const map = new google.maps.Map(document.getElementById("map"), {
     center: position,
@@ -79,16 +79,14 @@ const viewData = () => {
 }
 
 const handleSubmit = (value) => {
-
-  const mapContainer = document.getElementById('map');
-	mapContainer.innerHTML = '<h1 class="loading-text">Loading...</h1>';
+  mapContainer.classList.add('_sending');
 
   url = `https://ipgeolocation.abstractapi.com/v1/?api_key=fce60e902aa5419c95edf9550d724f01&ip_address=${value}`;
   httpGetAsync(url);
 }
 
 const validateIPaddress = (ipAddress) => {
-  const ipRegExp = RegExp(`(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)`);
+  const ipRegExp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/; // /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$/
 
   if (ipRegExp.test(ipAddress)) {
     handleSubmit(ipAddress);
