@@ -1,19 +1,76 @@
 {
-  "posts": [
+  "products": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "image": "p_1.png",
+      "name": "Quattro formaggi",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_1",
+      "dish": "pizza"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "image": "p_2.png",
+      "name": "Carbonara",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_2",
+      "dish": "pizza"
+    },
+    {
+      "image": "p_3.png",
+      "name": "Philadelphia",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_3",
+      "dish": "pizza"
+    },
+    {
+      "image": "p_4.png",
+      "name": "Di mare",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_4",
+      "dish": "pizza"
+    },
+    {
+      "image": "p_5.png",
+      "name": "Paperoni",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_5",
+      "dish": "pizza"
+    },
+    {
+      "image": "p_6.png",
+      "name": "Margarita",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_6",
+      "dish": "pizza"
+    },
+    {
+      "image": "p_7.png",
+      "name": "Quattro formaggi",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_7",
+      "dish": "pizza"
+    },
+    {
+      "image": "p_8.png",
+      "name": "Gawaiian",
+      "diameter": "32 cм",
+      "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
+      "price": "119 UAH",
+      "article": "p_8",
+      "dish": "pizza"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

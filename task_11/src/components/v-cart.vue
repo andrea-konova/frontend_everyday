@@ -23,7 +23,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .v-cart {
     display: flex;
     align-items: center;

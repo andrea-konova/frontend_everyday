@@ -23,7 +23,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .v-main {
     display: flex;
     align-items: center;

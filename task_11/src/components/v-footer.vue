@@ -23,7 +23,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .v-footer {
     display: flex;
     align-items: center;
