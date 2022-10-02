@@ -1,6 +1,7 @@
 <template>
   <div class="v-catalog">
     <!-- <h2>Заголовок</h2> -->
+    <v-cart v-if="CART.length"/>
     <v-catalog-item
       v-for="product in PRODUCTS"
       :key="product.article"
@@ -12,11 +13,13 @@
 
 <script>
   import vCatalogItem from './v-catalog-item.vue';
+  import vCart from './v-cart.vue';
   import { mapActions, mapGetters } from 'vuex';
 
   export default {
     name: 'v-catalog',
     components: {
+      vCart,
       vCatalogItem
     },
     props: {},
@@ -27,7 +30,8 @@
     },
     computed: {
       ...mapGetters([
-        'PRODUCTS'
+        'PRODUCTS',
+        'CART'
       ]),
     },
     methods: {
@@ -54,10 +58,11 @@
   .v-catalog {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 40px;
-    margin: 0;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1160%;
     color: black;
-    background-color: antiquewhite;
   }
 </style>

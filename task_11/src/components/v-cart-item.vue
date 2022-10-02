@@ -1,32 +1,30 @@
 <template>
-  <div class="v-main-wrapper">
-    <h1>{{title}}</h1>
+  <div class="v-cart-item">
   </div>
 </template>
 
 <script>
   export default {
-    name: 'v-main-wrapper',
+    name: 'v-cart-item',
     components: {},
     props: {},
     data() {
-      return {
-        title: 'Food delivery in Kovel'
-      }
     },
     computed: {},
     methods: {},
     watch: {},
-    mounted() {
-      console.log('Hello, I am alive!');
-    }
+    mounted() {}
   }
 </script>
 
 <style lang="scss">
-  .v-main {
+  .v-cart-item {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    color: rgb(57, 61, 61);
+    background-color: black;
   }
 </style>

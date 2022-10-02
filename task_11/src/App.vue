@@ -5,25 +5,22 @@
       <router-link to="/about">About</router-link>
     </nav> -->
     <!-- <router-view/> -->
-    <v-main-wrapper/>
-    <v-cart/>
-    <v-catalog/>
+    <v-section-main/>
+    <v-section-catalog/>
     <v-footer/>
   </div>
 </template>
 
 <script>
-  import vMainWrapper from './components/v-main-wrapper.vue';
-  import vCatalog from './components/v-catalog.vue';
-  import vCart from './components/v-cart.vue';
+  import vSectionMain from './components/v-section-main.vue';
+  import vSectionCatalog from './components/v-section-catalog.vue';
   import vFooter from './components/v-footer.vue';
 
   export default {
     name: 'app',
     components: {
-      vMainWrapper,
-      vCart,
-      vCatalog,
+      vSectionMain,
+      vSectionCatalog,
       vFooter
     }
   }

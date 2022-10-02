@@ -43,9 +43,7 @@
       }
     },
     watch: {},
-    mounted() {
-      console.log('Hello, v-catalog-item is alive!');
-    }
+    mounted() {}
   }
 </script>
 

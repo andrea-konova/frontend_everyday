@@ -1,13 +1,18 @@
 <template>
   <div class="v-cart">
     <h2>{{title}}</h2>
+    <v-cart-item/>
   </div>
 </template>
 
 <script>
+  import vCartItem from './v-cart-item.vue';
+
   export default {
     name: 'v-cart',
-    components: {},
+    components: {
+      vCartItem
+    },
     props: {},
     data() {
       return {
