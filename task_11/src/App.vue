@@ -5,8 +5,10 @@
       <router-link to="/about">About</router-link>
     </nav> -->
     <!-- <router-view/> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <v-section-main/>
     <v-section-catalog/>
+    <v-section-social/>
     <v-footer/>
   </div>
 </template>
@@ -14,6 +16,7 @@
 <script>
   import vSectionMain from './components/v-section-main.vue';
   import vSectionCatalog from './components/v-section-catalog.vue';
+  import vSectionSocial from './components/v-section-social.vue';
   import vFooter from './components/v-footer.vue';
 
   export default {
@@ -21,6 +24,7 @@
     components: {
       vSectionMain,
       vSectionCatalog,
+      vSectionSocial,
       vFooter
     }
   }
@@ -28,7 +32,7 @@
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

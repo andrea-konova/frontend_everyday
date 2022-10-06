@@ -1,4 +1,19 @@
 $main-bg: #F0F5FB;
+$black: #000000;
+$white: #ffffff;
+$orange: #FE5626;
+$gradient: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 body {
   margin: 0;
+}
+.v-container {
+  width: 95%;
+  max-width: 1160px;
+  margin: auto;
 }

@@ -1,13 +1,16 @@
 <template>
   <div class="v-catalog">
-    <!-- <h2>Заголовок</h2> -->
-    <v-cart v-if="CART.length"/>
-    <v-catalog-item
-      v-for="product in PRODUCTS"
-      :key="product.article"
-      :product_data="product"
-      @sendName="showName"
-    />
+    <div class="v-container">
+      <div class="v-catalog-wrap">
+        <v-cart v-if="CART.length"/>
+        <v-catalog-item
+          v-for="product in PRODUCTS"
+          :key="product.article"
+          :product_data="product"
+          @sendName="showName"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -56,13 +59,14 @@
 
 <style lang="scss">
   .v-catalog {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 40px;
-    margin: 0 auto;
-    width: 95%;
-    max-width: 1160%;
-    color: black;
+    margin-bottom: 70px;
+    &-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 40px;
+      margin: 0 auto;
+      color: black;
+    }
   }
 </style>

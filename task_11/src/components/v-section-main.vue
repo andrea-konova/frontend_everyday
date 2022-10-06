@@ -1,5 +1,6 @@
 <template>
   <div class="v-section-main">
+    <v-header/>
     <v-section-main-title title="Food delivery in Kovel"/>
     <p class="v-section-main__text">
       If you decide to relax or have unexpected guests, call us. We make sure that your vacation is comfortable, enjoyable and delicious
@@ -11,11 +12,13 @@
 </template>
 
 <script>
+  import vHeader from './v-header.vue';
   import vSectionMainTitle from './v-section-main-title.vue';
 
   export default {
     name: 'v-section-main',
     components: {
+      vHeader,
       vSectionMainTitle,
     },
     props: {},
@@ -31,7 +34,7 @@
 
 <style lang="scss">
   .v-section-main {
-    padding: 197px 0 508px;
+    padding: 0 0 508px;
     background-color: $main-bg;
     background-image: url('../assets/images/main-bg.png');
     background-repeat: no-repeat;
