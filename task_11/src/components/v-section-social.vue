@@ -23,7 +23,7 @@
     <div class="v-section-social__link-wrap">
       <div class="v-section-social__link">
         <p class="v-section-social__link-text">
-          Instagram: &nbsp;<a href="#" class="v-section-social__link-instagram">@classic_kovel</a>
+          Instagram: &nbsp;<a href="https://www.instagram.com/classic_kovel/" class="v-section-social__link-instagram">@classic_kovel</a>
         </p>
       </div>
     </div>
@@ -119,7 +119,7 @@
         font-weight: 700;
         transition: all 0.3s;
         &:hover {
-
+          color: $black;
         }
       }
     }

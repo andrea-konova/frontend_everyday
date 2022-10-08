@@ -9,6 +9,7 @@
     <v-section-main/>
     <v-section-catalog/>
     <v-section-social/>
+    <v-section-contacts/>
     <v-footer/>
   </div>
 </template>
@@ -17,6 +18,7 @@
   import vSectionMain from './components/v-section-main.vue';
   import vSectionCatalog from './components/v-section-catalog.vue';
   import vSectionSocial from './components/v-section-social.vue';
+  import vSectionContacts from './components/v-section-contacts.vue'
   import vFooter from './components/v-footer.vue';
 
   export default {
@@ -25,6 +27,7 @@
       vSectionMain,
       vSectionCatalog,
       vSectionSocial,
+      vSectionContacts,
       vFooter
     }
   }
