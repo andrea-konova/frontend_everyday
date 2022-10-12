@@ -1,6 +1,8 @@
 <template>
   <div class="v-section-catalog">
-    <v-cart/>
+    <v-cart
+      :cart_data="CART"
+    />
     <v-section-title title="Popular dishes"/>
     <v-catalog/>
   </div>
@@ -10,6 +12,7 @@
   import vSectionTitle from './v-section-title.vue';
   import vCatalog from './v-catalog.vue';
   import vCart from './v-cart.vue';
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'v-section-catalog',
@@ -22,7 +25,11 @@
     data() {
       return {}
     },
-    computed: {},
+    computed: {
+      ...mapGetters([
+        'CART'
+      ]),
+    },
     methods: {},
     watch: {},
     mounted() {}

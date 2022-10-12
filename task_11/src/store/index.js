@@ -20,6 +20,9 @@ export default new Vuex.Store({
   mutations: {
     SET_PRODUCTS_TO_STATE: (state, products) => {
       state.products = products;
+    },
+    SET_CART: (state, product) => {
+      state.cart.push(product);
     }
   },
   actions: {
@@ -35,6 +38,9 @@ export default new Vuex.Store({
           console.log(error);
           return error;
         })
+    },
+    ADD_TO_CART({commit}, product) {
+      commit('SET_CART', product)
     }
   },
   modules: {

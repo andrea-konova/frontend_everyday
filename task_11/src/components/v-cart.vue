@@ -1,15 +1,34 @@
 <template>
-  <div class="v-cart">
+  <div
+    v-if="cart_data.length"
+    class="v-cart">
     <div class="v-cart__bag">
       <div class="v-cart__price-wrap">
         <div class="v-cart__price">
-          <p class="v-cart__price-total">= ₴</p>
+          <p
+            class="v-cart__price-total">
+            = {{calcTotalPrice()}} ₴
+          </p>
           <span class="v-cart__price-triangle"></span>
         </div>
       </div>
-      <div class="v-cart__number">
-        <span>2</span>
+      <span class="v-cart__number">
+        {{cart_data.length}}
+      </span>
+    </div>
+    <v-cart-item/>
+  </div>
+  <div
+    v-else
+    class="v-cart">
+    <div class="v-cart__bag">
+      <div class="v-cart__price-wrap">
+        <div class="v-cart__price">
+          <p class="v-cart__price-total">= 0 ₴</p>
+          <span class="v-cart__price-triangle"></span>
+        </div>
       </div>
+      <span class="v-cart__number">0</span>
     </div>
     <v-cart-item/>
   </div>
@@ -23,12 +42,28 @@
     components: {
       vCartItem
     },
-    props: {},
+    props: {
+      cart_data: {
+        type: Array,
+        default() {
+          return []
+        }
+      }
+    },
     data() {
       return {}
     },
     computed: {},
-    methods: {},
+    methods: {
+      calcTotalPrice() {
+        let totalPrice = 0;
+        for (let i = 0; i < this.cart_data.length; i++) {
+          let newPrice = +this.cart_data[i].price.replace(/[^0-9]/g,"");
+          totalPrice = totalPrice + newPrice;
+        }
+        return totalPrice;
+      }
+    },
     watch: {},
     mounted() {}
   }
@@ -50,7 +85,7 @@
       background-image: url('../assets/images/icons/cart.png');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: 45px;
+      background-size: 40px;
       box-shadow: 0px 0px 30px 0px rgba(205, 71, 41, 0.26);
       position: relative;
     }
@@ -100,11 +135,8 @@
       border-radius: 50%;
       background-color: $orange;
       color: $white;
-      & span {
-        font-weight: 600;
-        font-size: 16px;
-        color: $white;
-      }
+      font-weight: 600;
+      font-size: 16px;
     }
   }
 </style>

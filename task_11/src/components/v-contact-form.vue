@@ -120,8 +120,7 @@
         left: 0;
         width: 50px;
         height: 50px;
-        // background: url('../assets/images/icons/arrow.png') no-repeat;
-        background-color: #222222;
+        background: url('../assets/images/icons/arrow.png') no-repeat;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
