@@ -1,5 +1,6 @@
 <template>
   <div class="v-section-catalog">
+    <v-cart/>
     <v-section-title title="Popular dishes"/>
     <v-catalog/>
   </div>
@@ -8,10 +9,12 @@
 <script>
   import vSectionTitle from './v-section-title.vue';
   import vCatalog from './v-catalog.vue';
+  import vCart from './v-cart.vue';
 
   export default {
     name: 'v-section-catalog',
     components: {
+      vCart,
       vSectionTitle,
       vCatalog
     },
@@ -28,7 +31,7 @@
 
 <style lang="scss">
   .v-section-catalog {
-    margin: 140px 0 0;
+    margin: 100px 0 0;
     background-image: url('../assets/images/section-catalog-bg.png');
     background-repeat: no-repeat;
     background-position: center center;

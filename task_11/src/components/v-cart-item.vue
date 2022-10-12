@@ -9,6 +9,7 @@
     components: {},
     props: {},
     data() {
+      return {}
     },
     computed: {},
     methods: {},

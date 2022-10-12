@@ -1,27 +1,29 @@
 <template>
   <div class="v-contact-form">
     <form class="form" @submit.prevent="onSubmit">
-      <!-- <p v-if="errors.length">
-        <b>Пожалуйста исправьте указанные ошибки:</b>
-        <ul>
-          <li v-for="error in errors">{{ error }}</li>
-        </ul>
-      </p> -->
       <input
-        type="text" 
-        class="form__input" 
-        id="name" 
-        v-model="name" 
-        placeholder="Your name" 
-        required>
+        type="text"
+        class="form__input"
+        id="name"
+        v-model="name"
+        name="name"
+        placeholder="Your name"
+        minlength="2"
+        maxlength="15">
       <input
-        type="tel" 
-        class="form__input" 
-        id="phone" v-model="phone" 
-        placeholder="Phone number" 
-        required 
-        pattern="^\+380\d{3}\d{2}\d{2}\d{2}$">
-      <input type="submit" class="form__input form__submit" value="Сall back">
+        type="tel"
+        class="form__input"
+        id="phone"
+        v-model="phone"
+        name="phone"
+        placeholder="Phone number"
+        :class="{'not-valid': failedValidation.phone, 'valid': failedValidation.phone === false}"
+        @input="onlyNumbers"
+        maxlength="13">
+      <input
+        type="submit"
+        class="form__input form__submit"
+        value="Сall back">
     </form>
   </div>
 </template>
@@ -33,15 +35,21 @@
     props: {},
     data() {
       return {
+        failedValidation: {
+          phone: null
+        },
+        phone: '',
         name: null,
-        phone: null,
         errors: []
       }
     },
     computed: {},
     methods: {
+      onlyNumbers() {
+        this.failedValidation.phone = !/^\+[\d]{12}$/.test(this.phone) ? true : false;
+      },
       onSubmit() {
-        if (this.name && this.phone) {
+        if (this.name && this.phone && !this.failedValidation.phone) {
           let formData = {
             name: this.name,
             phone: this.phone
@@ -49,10 +57,17 @@
           console.log(formData);
           this.name = null;
           this.phone = null;
+          alert('Thank you, your application has been sent successfully');
         } else {
+          if (this.errors.length > 0) {
+            this.errors.splice(0, this.errors.length);
+          }
           if(!this.name) this.errors.push('Name required.');
           if(!this.phone) this.errors.push('Phone required.');
-          console.log(this.errors);
+          if(this.failedValidation.phone) {
+            this.errors.push('Enter your phone number in international format starting with "+" sign');
+          }
+          alert(this.errors);
         }
       }
     },
@@ -103,9 +118,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 32px;
-        height: 9px;
-        background: url('../assets/images/icons/arrow.svg') no-repeat;
+        width: 50px;
+        height: 50px;
+        // background: url('../assets/images/icons/arrow.png') no-repeat;
+        background-color: #222222;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
@@ -116,4 +132,6 @@
       }
     }
   }
+  .not-valid {border: 1px solid red;}
+  .valid {border: 1px solid lightgreen;}
 </style>

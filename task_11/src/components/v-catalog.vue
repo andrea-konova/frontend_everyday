@@ -1,8 +1,8 @@
 <template>
   <div class="v-catalog">
     <div class="v-container">
+      <v-catalog-navigation/>
       <div class="v-catalog-wrap">
-        <v-cart v-if="CART.length"/>
         <v-catalog-item
           v-for="product in PRODUCTS"
           :key="product.article"
@@ -16,14 +16,14 @@
 
 <script>
   import vCatalogItem from './v-catalog-item.vue';
-  import vCart from './v-cart.vue';
+  import vCatalogNavigation from './v-catalog-navigation.vue'
   import { mapActions, mapGetters } from 'vuex';
 
   export default {
     name: 'v-catalog',
     components: {
-      vCart,
-      vCatalogItem
+      vCatalogItem,
+      vCatalogNavigation
     },
     props: {},
     data() {
