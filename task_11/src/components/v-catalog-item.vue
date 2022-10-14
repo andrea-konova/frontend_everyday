@@ -8,7 +8,7 @@
         <h3 class="v-catalog-item__title">{{product_data.name}}</h3>
         <p class="v-catalog-item__diameter">{{product_data.diameter}}</p>
       </div>
-      <p class="v-catalog-item__caption">{{product_data.ingredients}}</p>
+      <p class="v-catalog-item__caption text-hidden">{{product_data.ingredients}}</p>
       <p class="v-catalog-item__price">{{product_data.price}}</p>
       <button
         class="v-catalog-item__button button"
@@ -39,7 +39,7 @@
     computed: {},
     methods: {
       addToCart() {
-        this.$emit('addToCart', this.product_data)
+        this.$emit('addToCart', this.product_data);
       }
     },
     watch: {},
@@ -61,6 +61,7 @@
     position: relative;
     &__content-wrap {
       margin-top: 30px;
+      width: 100%;
     }
     &__triangle {
       display: block;

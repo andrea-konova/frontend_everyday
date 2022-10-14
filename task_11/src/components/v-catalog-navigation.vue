@@ -1,30 +1,88 @@
 <template>
   <div class="v-catalog-navigation">
-    <input type="radio" name="tab-btn" id="button-1" class="v-radio-button" value="" checked>
-    <label for="button-1" class="v-label">Pizza</label>
-    <input type="radio" name="tab-btn" id="button-2" class="v-radio-button" value="">
-    <label for="button-2" class="v-label">Sushi</label>
-    <input type="radio" name="tab-btn" id="button-3" class="v-radio-button" value="">
-    <label for="button-3" class="v-label">Salad</label>
-    <input type="radio" name="tab-btn" id="button-4" class="v-radio-button" value="">
-    <label for="button-4" class="v-label">Dessert</label>
-    <input type="radio" name="tab-btn" id="button-5" class="v-radio-button" value="">
-    <label for="button-5" class="v-label">Drinks</label>
+    <v-catalog-navigation-item
+      v-for="category in categories"
+      :key="category.id"
+      :category="category"
+      @sortByCategories="sortByCategories"
+    />
   </div>
 </template>
 
 <script>
+  import vCatalogNavigationItem from './v-catalog-navigation-item.vue';
+  import { mapActions, mapGetters } from 'vuex';
+
   export default {
     name: 'v-catalog-navigation',
-    components: {},
+    components: {
+      vCatalogNavigationItem
+    },
     props: {},
     data() {
       return {
-        
+        categories: [
+          {
+            id: 'button-1',
+            name: 'Pizza',
+            checked: true
+          },
+          {
+            id: 'button-2',
+            name: 'Sushi',
+            checked: false
+          },
+          {
+            id: 'button-3',
+            name: 'Salad',
+            checked: false
+          },
+          {
+            id: 'button-4',
+            name: 'Dessert',
+            checked: false
+          },
+          {
+            id: 'button-5',
+            name: 'Drinks',
+            checked: false
+          }
+        ],
+        // sortedProducts: []
       }
     },
-    computed: {},
-    methods: {},
+    computed: {
+      ...mapGetters([
+        'PRODUCTS'
+      ]),
+      // filteredProducts() {
+      //   if (this.sortedProducts.length) {
+      //     return this.sortedProducts;
+      //   } else {
+      //     return this.PRODUCTS;
+      //   }
+      // }
+    },
+    methods: {
+      sortByCategories() {
+        this.$emit('sortByCategories', this.name);
+      },
+      // sortByCategories(name) {
+      //   this.PRODUCTS.map(item => {
+      //     if (item.dish === name) {
+      //       this.sortedProducts.push(item)
+      //     }
+      //   })
+      // },
+      filteredProducts() {
+        this.$emit('filteredProducts', this.sortedProducts);
+        // if (this.sortedProducts.length) {
+        //   return this.sortedProducts;
+        // } else {
+        //   return this.PRODUCTS;
+        // }
+      }
+    },
     watch: {},
     mounted() {}
   }

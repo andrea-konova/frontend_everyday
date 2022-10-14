@@ -7,7 +7,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_1",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_2.png",
@@ -16,7 +16,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_2",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_3.png",
@@ -25,7 +25,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_3",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_4.png",
@@ -34,7 +34,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_4",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_5.png",
@@ -43,7 +43,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_5",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_6.png",
@@ -52,7 +52,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_6",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_7.png",
@@ -61,7 +61,7 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_7",
-      "dish": "pizza"
+      "dish": "Pizza"
     },
     {
       "image": "p_8.png",
@@ -70,7 +70,106 @@
       "ingredients": "Dough, Mozzarella, Cheddar, Blue, Parmesan",
       "price": "119 UAH",
       "article": "p_8",
-      "dish": "pizza"
+      "dish": "Pizza"
+    },
+    {
+      "image": "s_1.jpeg",
+      "name": "Supper fila",
+      "diameter": "1155 g",
+      "ingredients": "Surimi-tamago roll, Maki with butter, Maki with salmon, Philadelphia roll with salmon, Chizu roll",
+      "price": "559 UAH",
+      "article": "s_1",
+      "dish": "Sushi"
+    },
+    {
+      "image": "s_2.jpeg",
+      "name": "Zelenyj drakon",
+      "diameter": "395 g",
+      "ingredients": "Dragon roll with fried salmon, eel, cream cheese, takuan, sweet shiitake, cucumber, avocado, sesame and unagi sauce",
+      "price": "249 UAH",
+      "article": "s_2",
+      "dish": "Sushi"
+    },
+    {
+      "image": "s_3.jpeg",
+      "name": "Philadelphia",
+      "diameter": "260 g",
+      "ingredients": "Classic roll with salmon, cream cheese, avocado, tobiko caviar and cucumber",
+      "price": "259 UAH",
+      "article": "s_3",
+      "dish": "Sushi"
+    },
+    {
+      "image": "s_4.jpeg",
+      "name": "Tajskij losos",
+      "diameter": "330 g",
+      "ingredients": "Original roll with caramelized salmon, eel, kimchi surimi, campio, cream cheese, sweet shiitake, cucumber, spicy and mango-chili sauces, green onion and french fries",
+      "price": "299 UAH",
+      "article": "s_4",
+      "dish": "Sushi"
+    },
+    {
+      "image": "sa_1.jpeg",
+      "name": "Cezar",
+      "diameter": "275 g",
+      "ingredients": "Chicken fillet, crispy bacon, tomatoes, lettuce mix, egg, parmesan cheese, green butter garlic croutons, caesar dressing",
+      "price": "169 UAH",
+      "article": "sa_1",
+      "dish": "Salad"
+    },
+    {
+      "image": "sa_2.jpeg",
+      "name": "Grecheskij",
+      "diameter": "245 g",
+      "ingredients": "Tomatoes, bell peppers, cucumbers, romaine lettuce, feta cheese, red onion, oregano, olive oil, Balsamic sauce",
+      "price": "125 UAH",
+      "article": "sa_2",
+      "dish": "Salad"
+    },
+    {
+      "image": "sa_3.jpeg",
+      "name": "Salat-s-lososem",
+      "diameter": "190 g",
+      "ingredients": "Lightly salted salmon, avocado, mango, salad mix, cherry tomatoes, almond flakes, orange sauce",
+      "price": "199 UAH",
+      "article": "sa_3",
+      "dish": "Salad"
+    },
+    {
+      "image": "de_1.jpeg",
+      "name": "Napoleon",
+      "diameter": "120 g",
+      "ingredients": "Napoleon with vanilla custard",
+      "price": "99 UAH",
+      "article": "de_1",
+      "dish": "Dessert"
+    },
+    {
+      "image": "de_2.jpeg",
+      "name": "Chizkejk",
+      "diameter": "140 g",
+      "ingredients": "Classic shortbread cream cheese dessert",
+      "price": "109 UAH",
+      "article": "de_2",
+      "dish": "Dessert"
+    },
+    {
+      "image": "dr_1.jpeg",
+      "name": "Corona Extra",
+      "diameter": "0.33 l",
+      "ingredients": "Beer",
+      "price": "89 UAH",
+      "article": "dr_1",
+      "dish": "Drinks"
+    },
+    {
+      "image": "dr_2.jpeg",
+      "name": "Pepsi",
+      "diameter": "0.5 l",
+      "ingredients": "Fizzy drink",
+      "price": "45 UAH",
+      "article": "dr_2",
+      "dish": "Drinks"
     }
   ]
 }
