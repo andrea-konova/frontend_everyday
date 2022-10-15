@@ -239,9 +239,7 @@
       }
     },
     computed: {
-      ...mapGetters([
-        // 'PRODUCTS'
-      ]),
+      ...mapGetters([]),
       filteredProducts() {
         if (this.sortedProducts.length) {
           return this.sortedProducts;
@@ -252,7 +250,6 @@
     },
     methods: {
       ...mapActions([
-        // 'GET_PRODUCTS_FROM_API',
         'ADD_TO_CART'
       ]),
       addToCart(data) {
@@ -276,14 +273,7 @@
       }
     },
     watch: {},
-    mounted() {
-      // this.GET_PRODUCTS_FROM_API()
-      // .then((response) => {
-      //   if (response.data) {
-      //     console.log('Данные для карточки товара получены');
-      //   }
-      // })
-    }
+    mounted() {}
   }
 </script>
 
@@ -305,6 +295,46 @@
       gap: 40px;
       margin: 0 auto;
       color: black;
+    }
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-catalog {
+      &-wrap {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 40px;
+        margin: 0 auto;
+        color: black;
+      }
+      &-navigation {
+        margin: 0 auto 50px;
+        max-width: 830px;
+      }
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .v-catalog {
+      &-wrap {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 40px;
+      }
+      &-navigation {
+        margin: 0 auto 30px;
+        width: 100%;
+        max-width: 830px;
+      }
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-catalog {
+      &-navigation {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto 30px;
+        width: 100%;
+        max-width: 830px;
+      }
     }
   }
 </style>

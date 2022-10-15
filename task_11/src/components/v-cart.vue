@@ -16,7 +16,6 @@
         {{cart_data.length}}
       </span>
     </div>
-    <v-cart-item/>
   </div>
   <div
     v-else
@@ -30,18 +29,13 @@
       </div>
       <span class="v-cart__number">0</span>
     </div>
-    <v-cart-item/>
   </div>
 </template>
 
 <script>
-  import vCartItem from './v-cart-item.vue';
-
   export default {
     name: 'v-cart',
-    components: {
-      vCartItem
-    },
+    components: {},
     props: {
       cart_data: {
         type: Array,
@@ -119,7 +113,6 @@
         top: calc(50% - 10px);
         right: -9px;
         clip-path: polygon(50% 0%, 50% 100%, 100% 50%);
-        // transform: rotate(90deg);
         border-radius: 0 0 0 0.25em;
       }
     }
@@ -137,6 +130,42 @@
       color: $white;
       font-weight: 600;
       font-size: 16px;
+    }
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-cart {
+      padding-right: 25px;
+      &__bag {
+        width: 60px;
+        height: 60px;
+        background-size: 30px;
+      }
+      &__price {
+        width: 80px;
+        height: 30px;
+        border-radius: 5px;
+        &-wrap {
+          position: absolute;
+          left: -100px;
+          top: calc(50% - 15px);
+        }
+        &-total {
+          font-size: 14px;
+        }
+        &-triangle {
+          height: 15px;
+          width: 15px;
+          top: calc(50% - 7px);
+          right: -7px;
+        }
+      }
+      &__number {
+        bottom: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
     }
   }
 </style>

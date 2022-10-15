@@ -46,8 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 135px;
-    height: 55px;
+    padding: 16px 35px;
     border: none;
     border-radius: 27px;
     font-weight: 600;
@@ -68,5 +67,17 @@
     background: $blue;
     opacity: 1;
     color: $white;
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-label {
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-label {
+      margin-bottom: 15px;
+    }
   }
 </style>

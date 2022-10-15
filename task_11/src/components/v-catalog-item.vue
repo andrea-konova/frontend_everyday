@@ -80,8 +80,8 @@
       width: 100%;
       height: 100%;
       &-wrap {
-        max-width: 170px;
-        height: 170px;
+        width: 160px;
+        height: 160px;
         object-position: center;
         object-fit: contain;
         filter: drop-shadow(20px 10px 20px rgba(143, 92, 32, 0.1)) drop-shadow(10px 5px 10px rgba(143, 92, 32, 0.1));
@@ -104,6 +104,7 @@
     }
     &__caption {
       margin: 8px 0 19px;
+      min-height: 34px;
       font-weight: 400;
       font-size: 12px;
       text-align: left;
@@ -132,5 +133,8 @@
         box-shadow: 0px 4px 8px rgba(205, 71, 41, 0.26);
       }
     }
+  }
+  @media screen and ( max-width: 992px ) {
+    
   }
 </style>

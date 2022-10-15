@@ -151,4 +151,12 @@
       }
     }
   }
+  @media screen and ( max-width: 992px ) {
+    .v-info {
+      flex-direction: column;
+      &__times {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
 </style>

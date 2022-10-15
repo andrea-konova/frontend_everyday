@@ -133,4 +133,46 @@
   }
   .not-valid {border: 1px solid red;}
   .valid {border: 1px solid lightgreen;}
+  @media screen and ( max-width: 992px ) {
+    .form {
+      &__input {
+        padding: 0 0 0 20px;
+        width: 28%;
+        max-width: 260px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      &__submit {
+        padding: 0;
+        font-size: 16px;
+      }
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .form {
+      &__input {
+        height: 30px;
+        border-radius: 15px;
+        font-size: 12px;
+      }
+      &__submit {
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .form {
+      flex-direction: column;
+      &__input {
+        margin-bottom: 15px;
+        width: 90%;
+        max-width: 300px;
+      }
+      &__submit {
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+  }
 </style>

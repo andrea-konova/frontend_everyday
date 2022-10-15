@@ -61,4 +61,34 @@
       }
     }
   }
+  @media screen and ( max-width: 992px ) {
+    .v-section-contacts {
+      &__image {
+        &-wrap {
+          width: 450px;
+          height: 200px;
+        }
+      }
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .v-section-contacts {
+      &__image {
+        &-wrap {
+          width: 350px;
+          height: 170px;
+        }
+      }
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-section-contacts {
+      &__image {
+        &-wrap {
+          width: 280px;
+          height: 140px;
+        }
+      }
+    }
+  }
 </style>

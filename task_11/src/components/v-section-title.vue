@@ -28,4 +28,17 @@
     text-align: center;
     color: #000000;
   }
+  @media screen and ( max-width: 992px ) {
+    .v-section-title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .v-section-title {
+      margin: 0 0 25px;
+      font-size: 28px;
+      line-height: 30px;
+    }
+  }
 </style>

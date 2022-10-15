@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:0 0 127px 0;
+    margin: 0 0 127px 0;
     overflow: hidden;
     position: relative;
     &-container {
@@ -96,8 +96,6 @@
         display: flex;
         align-content: center;
         justify-content: center;
-        // width: 480px;
-        // height: 180px;
         padding: 20px;
         z-index: 3;
         background: linear-gradient(45.04deg, #FD9924 -51.05%, #F65B16 134.89%);
@@ -120,6 +118,43 @@
         transition: all 0.3s;
         &:hover {
           color: $black;
+        }
+      }
+    }
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-section-social {
+      margin: 0 0 80px 0;
+      &__image {
+        &-wrap {
+          width: 220px;
+          height: 220px;
+        }
+      }
+      &__link {
+        width: 350px;
+        height: 100px;
+        &-text {
+          font-size: 20px;
+          line-height: 140%;
+        }
+      }
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .v-section-social {
+      margin: 0 0 80px 0;
+      &__image {
+        &-wrap {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      &__link {
+        width: 300px;
+        height: 80px;
+        &-text {
+          font-size: 16px;
         }
       }
     }

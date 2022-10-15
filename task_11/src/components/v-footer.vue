@@ -61,4 +61,33 @@
       }
     }
   }
+  @media screen and ( max-width: 992px ) {
+    .v-footer {
+      &__text {
+        font-size: 14px;
+      }
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .v-footer {
+      margin: 20px 0;
+      &-logo__img-wrap {
+        width: 80px;
+        height: 39px;
+      }
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-footer {
+      &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      &__text:first-child {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
 </style>
