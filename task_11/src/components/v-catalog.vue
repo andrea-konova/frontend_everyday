@@ -17,6 +17,9 @@
           @addToCart="addToCart"
         />
       </div>
+      <div class="v-catalog-button-row">
+        <button class="v-catalog-button"></button>
+      </div>
     </div>
   </div>
 </template>
@@ -296,6 +299,41 @@
       margin: 0 auto;
       color: black;
     }
+    &-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
+      border: 1px solid #FE5626;
+      position: relative;
+      transition: all 0.5s;
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 12px);
+        left: calc(50% - 12px);
+        width: 24px;
+        height: 24px;
+        background-image: url('../assets/images/icons/more.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 2;
+        transition: all 0.5s;
+      }
+      &:hover {
+        cursor: pointer;
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+      &-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 80px 0 103px;
+      }
+    }
   }
   @media screen and ( max-width: 992px ) {
     .v-catalog {
@@ -309,6 +347,20 @@
       &-navigation {
         margin: 0 auto 50px;
         max-width: 830px;
+      }
+      &-button {
+        width: 40px;
+        height: 40px;
+        &::after {
+          content: '';
+          top: calc(50% - 10px);
+          left: calc(50% - 10px);
+          width: 20px;
+          height: 20px;
+        }
+        &-row {
+          margin: 50px 0 70px;
+        }
       }
     }
   }
@@ -328,6 +380,12 @@
   }
   @media screen and ( max-width: 576px ) {
     .v-catalog {
+      &-wrap {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 40px;
+        width: 90%;
+      }
       &-navigation {
         flex-wrap: wrap;
         justify-content: space-around;

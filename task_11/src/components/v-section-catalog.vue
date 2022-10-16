@@ -44,4 +44,9 @@
     background-position: center center;
     background-size: cover;
   }
+  @media screen and ( max-width: 992px ) {
+    .v-section-catalog {
+      margin: 80px 0 0;
+    }
+  }
 </style>

@@ -168,4 +168,10 @@
       }
     }
   }
+  @media screen and (max-width: 576px) {
+    .v-cart {
+      margin-bottom: 20px;
+      padding-right: 40px;
+    }
+  }
 </style>

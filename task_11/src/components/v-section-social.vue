@@ -151,7 +151,7 @@
         }
       }
       &__link {
-        width: 300px;
+        width: 250px;
         height: 80px;
         &-text {
           font-size: 16px;

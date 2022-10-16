@@ -26,7 +26,7 @@
           <p class="v-info__times">Daily 11am - 9pm</p>
           <a href="tel:0800330898" class="v-info__phone">0 800 33 08 98</a>
         </div>
-        <div class="v-burger" id="burger">
+        <div class="v-burger" id="burger" v-on:click="toggleMenu">
           <span></span>
           <span></span>
           <span></span>
@@ -45,7 +45,15 @@
       return {}
     },
     computed: {},
-    methods: {},
+    methods: {
+      toggleMenu() {
+        const burgerBtn = document.querySelector('.v-burger');
+        const headerMenu = document.querySelector('.v-header__burger-wrap');
+
+        burgerBtn.classList.toggle('v-burger--active');
+        headerMenu.classList.toggle('v-header__burger-wrap-hide');
+      }
+    },
     watch: {},
     mounted() {}
   }
@@ -67,6 +75,9 @@
     &__navigation {
       margin-top: 15px;
       padding: 0;
+    }
+    &__logo {
+      margin-left: 40px;
     }
   }
   .v-burger {
@@ -156,7 +167,104 @@
       flex-direction: column;
       &__times {
         margin: 0 0 10px 0;
+        font-size: 14px;
       }
+      &__phone {
+        font-size: 16px;
+        line-height: 20px;
+        &::before {
+          width: 25px;
+          height: 25px;
+          top: calc(50% - 12px);
+          left: -25px;
+        }
+      }
+    }
+    .v {
+      &-menu {
+        flex-direction: column;
+        &__item {
+          margin: 0 0 40px 0;
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+      &-header__logo {
+        order: 3;
+      }
+      &-burger {
+        display: block;
+        margin-top: 10px;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        z-index: 3;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: transparent;
+        order: 2;
+      }
+      &-burger span {
+        position: absolute;
+        width: 40px;
+        height: 1px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.5s;
+        background-color: $orange;
+      }
+      &-burger span:nth-of-type(2) {
+        top: calc(50% - 12px);
+      }
+      &-burger span:nth-of-type(3) {
+        top: calc(50% + 12px);
+      }
+      &-burger--active span:nth-of-type(1) {
+        display: none;
+      }
+      &-burger--active span:nth-of-type(2) {
+        top: 50%;
+        background-color: $orange;
+        height: 2px;
+        transform: translate(-50%, 0%) rotate(45deg);
+      }
+      &-burger--active span:nth-of-type(3) {
+        top: 50%;
+        background-color: $orange;
+        height: 2px;
+        transform: translate(-50%, 0%) rotate(-45deg);
+      }
+    }
+    .v-header {
+      &__info {
+        order: 4;
+      }
+      &__burger-wrap {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding-bottom: 20px;
+        z-index: 3;
+        width: 100%;
+        border: 3px solid $orange;
+        border-radius: 20px;
+        background-color: $main-bg;
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+        overflow: hidden;
+      }
+      &__burger-wrap-hide {
+        transform: translateX(0);
+      }
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-header__logo {
+      display: none;
     }
   }
 </style>

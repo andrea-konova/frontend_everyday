@@ -41,4 +41,11 @@
       line-height: 35px;
     }
   }
+  @media screen and ( max-width: 576px ) {
+    .v-section-main-title {
+      margin: 75px 0 10px;
+      font-size: 32px;
+      line-height: 35px;
+    }
+  }
 </style>
