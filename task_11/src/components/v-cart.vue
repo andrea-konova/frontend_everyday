@@ -35,7 +35,6 @@
 <script>
   export default {
     name: 'v-cart',
-    components: {},
     props: {
       cart_data: {
         type: Array,
@@ -44,10 +43,6 @@
         }
       }
     },
-    data() {
-      return {}
-    },
-    computed: {},
     methods: {
       calcTotalPrice() {
         let totalPrice = 0;
@@ -57,20 +52,22 @@
         }
         return totalPrice;
       }
-    },
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 
 <style lang="scss">
   .v-cart {
+    position: fixed;
+    right: 10px;
+    top: 25px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 15px;
     margin: 0;
     color: rgb(57, 61, 61);
+    z-index: 3;
     &__bag {
       width: 80px;
       height: 80px;
@@ -132,9 +129,14 @@
       font-size: 16px;
     }
   }
+  @media screen and ( max-width: 1650px ) {
+    .v-cart {
+      top: 100px;
+    }
+  }
   @media screen and ( max-width: 992px ) {
     .v-cart {
-      padding-right: 25px;
+      right: 5px;
       &__bag {
         width: 60px;
         height: 60px;
@@ -170,8 +172,8 @@
   }
   @media screen and (max-width: 576px) {
     .v-cart {
+      top: calc(90% - 15px);
       margin-bottom: 20px;
-      padding-right: 40px;
     }
   }
 </style>

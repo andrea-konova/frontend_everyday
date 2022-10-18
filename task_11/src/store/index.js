@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -20,12 +19,5 @@ export default new Vuex.Store({
     SET_CART: (state, product) => {
       state.cart.push(product);
     }
-  },
-  actions: {
-    ADD_TO_CART({commit}, product) {
-      commit('SET_CART', product)
-    }
-  },
-  modules: {
   }
 })

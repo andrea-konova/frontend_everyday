@@ -39,12 +39,6 @@
 <script>
   export default {
     name: 'v-header',
-    components: {},
-    props: {},
-    data() {
-      return {}
-    },
-    computed: {},
     methods: {
       toggleMenu() {
         const burgerBtn = document.querySelector('.v-burger');
@@ -53,9 +47,7 @@
         burgerBtn.classList.toggle('v-burger--active');
         headerMenu.classList.toggle('v-header__burger-wrap-hide');
       }
-    },
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 
@@ -199,7 +191,7 @@
         width: 40px;
         height: 40px;
         position: relative;
-        z-index: 3;
+        z-index: 4;
         overflow: hidden;
         border-radius: 50%;
         background-color: transparent;
@@ -248,7 +240,7 @@
         top: 0;
         right: 0;
         padding-bottom: 20px;
-        z-index: 3;
+        z-index: 4;
         width: 100%;
         border: 3px solid $orange;
         border-radius: 20px;

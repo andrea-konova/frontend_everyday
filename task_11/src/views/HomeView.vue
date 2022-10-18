@@ -10,6 +10,8 @@
 
 export default {
   name: 'HomeView',
-  components: {}
+  components: {
+    
+  }
 }
 </script>

@@ -20,15 +20,7 @@
     components: {
       vHeader,
       vSectionMainTitle,
-    },
-    props: {},
-    data() {
-      return {}
-    },
-    computed: {},
-    methods: {},
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 

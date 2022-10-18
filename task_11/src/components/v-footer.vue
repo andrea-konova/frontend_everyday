@@ -21,16 +21,7 @@
 
 <script>
   export default {
-    name: 'v-footer',
-    components: {},
-    props: {},
-    data() {
-      return {}
-    },
-    computed: {},
-    methods: {},
-    watch: {},
-    mounted() {}
+    name: 'v-footer'
   }
 </script>
 

@@ -31,8 +31,6 @@
 <script>
   export default {
     name: 'v-contact-form',
-    components: {},
-    props: {},
     data() {
       return {
         failedValidation: {
@@ -43,7 +41,6 @@
         errors: []
       }
     },
-    computed: {},
     methods: {
       onlyNumbers() {
         this.failedValidation.phone = !/^\+[\d]{12}$/.test(this.phone) ? true : false;
@@ -70,9 +67,7 @@
           alert(this.errors);
         }
       }
-    },
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 

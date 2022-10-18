@@ -20,15 +20,7 @@
     components: {
       vSectionTitle,
       vContactForm
-    },
-    props: {},
-    data() {
-      return {}
-    },
-    computed: {},
-    methods: {},
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 

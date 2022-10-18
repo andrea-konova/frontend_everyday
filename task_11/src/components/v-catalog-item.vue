@@ -22,7 +22,6 @@
 <script>
   export default {
     name: 'v-catalog-item',
-    components: {},
     props: {
       product_data: {
         type: Object,
@@ -31,19 +30,11 @@
         }
       }
     },
-    data() {
-      return {
-        title: 'Карточка товара'
-      }
-    },
-    computed: {},
     methods: {
       addToCart() {
         this.$emit('addToCart', this.product_data);
       }
-    },
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 

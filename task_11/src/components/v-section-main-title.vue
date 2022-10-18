@@ -5,17 +5,9 @@
 <script>
   export default {
     name: 'v-section-main-title',
-    components: {},
     props: [
       'title'
-    ],
-    data() {
-      return {}
-    },
-    computed: {},
-    methods: {},
-    watch: {},
-    mounted() {}
+    ]
   }
 </script>
 

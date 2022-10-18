@@ -32,16 +32,7 @@
 
 <script>
   export default {
-    name: 'v-section-social',
-    components: {},
-    props: {},
-    data() {
-      return {}
-    },
-    computed: {},
-    methods: {},
-    watch: {},
-    mounted() {}
+    name: 'v-section-social'
   }
 </script>
 

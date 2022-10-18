@@ -35,7 +35,6 @@
       vCatalogItem,
       vCatalogNavigationItem
     },
-    props: {},
     data() {
       return {
         sortedProducts: [],
@@ -252,11 +251,12 @@
       }
     },
     methods: {
-      ...mapActions([
-        'ADD_TO_CART'
-      ]),
+      // ...mapActions([
+      //   'ADD_TO_CART'
+      // ]),
       addToCart(data) {
-        this.ADD_TO_CART(data);
+        // this.ADD_TO_CART(data);
+        this.$store.commit('SET_CART', data)
       },
       sortByCategories(name) {
         this.sortedProducts = [];
@@ -274,9 +274,7 @@
         })
         return this.sortedProducts;
       }
-    },
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 

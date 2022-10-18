@@ -21,18 +21,11 @@
       vSectionTitle,
       vCatalog
     },
-    props: {},
-    data() {
-      return {}
-    },
     computed: {
       ...mapGetters([
         'CART'
       ]),
-    },
-    methods: {},
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 

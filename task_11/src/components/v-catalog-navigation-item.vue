@@ -15,7 +15,6 @@
 <script>
   export default {
     name: 'v-catalog-navigation-item',
-    components: {},
     props: {
       category: {
         type: Object,
@@ -24,17 +23,11 @@
         }
       }
     },
-    data() {
-      return {}
-    },
-    computed: {},
     methods: {
       sortByCategories() {
         this.$emit('sortByCategories', this.category.name);
       }
-    },
-    watch: {},
-    mounted() {}
+    }
   }
 </script>
 
