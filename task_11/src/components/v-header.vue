@@ -9,7 +9,7 @@
                 <a href="#" class="v-menu__item-link">Payment</a>
               </li>
               <li class="v-menu__item">
-                <a href="#" class="v-menu__item-link">About us</a>
+                <router-link to="/about" class="v-menu__item-link">About us</router-link>
               </li>
               <li class="v-menu__item">
                 <a href="#" class="v-menu__item-link">Contacts</a>
@@ -17,11 +17,11 @@
             </ul>
           </nav>
         </div>
-        <a href="#home" class="v-header__logo v-logo">
+        <router-link to="/" class="v-header__logo v-logo">
           <div class="v-logo__img-wrap">
             <img src="../assets/images/logo.png" class="v-logo__img" alt="logo"/>
           </div>
-        </a>
+        </router-link>
         <div class="v-header__info v-info">
           <p class="v-info__times">Daily 11am - 9pm</p>
           <a href="tel:0800330898" class="v-info__phone">0 800 33 08 98</a>
@@ -69,7 +69,7 @@
       padding: 0;
     }
     &__logo {
-      margin-left: 40px;
+      padding-left: 40px;
     }
   }
   .v-burger {
