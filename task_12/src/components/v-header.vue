@@ -17,6 +17,7 @@
 <style lang="scss">
   .v-header {
     color: $dark-text;
+    background-color: $white-bg;
     &__container {
       display: flex;
       align-items: center;

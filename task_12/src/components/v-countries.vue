@@ -8,9 +8,6 @@
         @addToCart="addToCart"
       />
     </div>
-    <div class="v-countries-button-row">
-      <button class="v-countries-button"></button>
-    </div>
   </div>
 </template>
 
@@ -268,57 +265,13 @@
 
 <style lang="scss">
   .v-countries {
-    margin-bottom: 70px;
-    &-navigation {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 auto 50px;
-      width: 80%;
-      max-width: 830px;
-    }
     &-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
-      gap: 40px;
+      gap: 75px;
       margin: 0 auto;
-      color: black;
-    }
-    &-button {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: linear-gradient(287.74deg, #F58656 8.52%, #FE5626 92.72%);
-      border: 1px solid #FE5626;
-      position: relative;
-      transition: all 0.5s;
-      &::after {
-        content: '';
-        position: absolute;
-        top: calc(50% - 12px);
-        left: calc(50% - 12px);
-        width: 24px;
-        height: 24px;
-        background-image: url('../assets/images/icons/more.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        z-index: 2;
-        transition: all 0.5s;
-      }
-      &:hover {
-        cursor: pointer;
-        &::after {
-          transform: rotate(180deg);
-        }
-      }
-      &-row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 80px 0 103px;
-      }
+      padding: 45px 0;
     }
   }
   @media screen and ( max-width: 992px ) {
