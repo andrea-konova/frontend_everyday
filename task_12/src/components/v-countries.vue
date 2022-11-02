@@ -265,13 +265,16 @@
 
 <style lang="scss">
   .v-countries {
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
     &-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
       gap: 75px;
       margin: 0 auto;
-      padding: 45px 0;
+      padding: 0 0 45px;
     }
   }
   @media screen and ( max-width: 992px ) {
@@ -279,7 +282,7 @@
       &-wrap {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        gap: 40px;
+        gap: 50px;
         margin: 0 auto;
         color: black;
       }
@@ -308,7 +311,7 @@
       &-wrap {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        gap: 40px;
+        gap: 75px;
       }
       &-navigation {
         margin: 0 auto 30px;

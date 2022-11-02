@@ -49,12 +49,12 @@
         this.areOptionsVisible = false;
       }
     },
-    mounted() {
-      document.addEventListener('click', this.hideSelect.bind(this), true)
-    },
-    beforeDestroy() {
-      document.removeEventListener('click', this.hideSelect)
-    }
+    // mounted() {
+    //   document.addEventListener('click', this.hideSelect.bind(this), true)
+    // },
+    // beforeDestroy() {
+    //   document.removeEventListener('click', this.hideSelect, true)
+    // }
   }
 </script>
 
@@ -99,6 +99,17 @@
         margin: 0 0 8px;
         &:last-child {
           margin: 0;
+        }
+      }
+    }
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-select {
+      font-size: 12px;
+      &__title {
+        &::after {
+          width: 7px;
+          height: 4px;
         }
       }
     }

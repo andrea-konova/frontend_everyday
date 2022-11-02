@@ -1,19 +1,22 @@
 <template>
   <div class="home">
     <v-header/>
-    <v-select
-      :options="options"
-      @select="optionsSelect"
-      :selected="selected"
-    />
-    <p>{{selected}}</p>
+    <div class="home__navigation-row">
+      <v-search-field/>
+      <v-select
+        :options="options"
+        @select="optionsSelect"
+        :selected="selected"
+      />
+    </div>
     <v-countries/>
   </div>
 </template>
 
 <script>
   import vHeader from "../components/v-header.vue";
-  import vSelect from "../components/v-select.vue"
+  import vSelect from "../components/v-select.vue";
+  import vSearchField from "../components/v-search-field.vue";
   import vCountries from "../components/v-countries.vue";
 
   export default {
@@ -21,6 +24,7 @@
     components: {
       vHeader,
       vSelect,
+      vSearchField,
       vCountries
     },
     data() {
@@ -46,5 +50,21 @@
 <style lang="scss">
   .home {
     background-color: $light-bg;
+    &__navigation-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 95%;
+      max-width: 1280px;
+      margin: 48px auto;
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .home {
+      &__navigation-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   }
 </style>

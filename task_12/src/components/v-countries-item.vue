@@ -42,8 +42,9 @@
   .v-countries-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin: 0;
+    width: 100%;
+    max-width: 264px;
     background-color: $white-bg;
     border-radius: 5px;
     overflow: hidden;
@@ -53,16 +54,16 @@
       align-items: flex-start;
       padding: 24px 24px 46px;
       color: $dark-text;
+      text-align: left;
     }
     &__image {
       width: 100%;
       height: 100%;
       &-wrap {
         width: 100%;
-        max-width: 264px;
         height: 160px;
         object-position: center;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
     &__title {
@@ -82,6 +83,17 @@
       &--light {
         font-weight: 300;
       }
+    }
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-countries-item {
+      max-width: none;
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-countries-item {
+      width: 264px;
+      margin: 0 auto;
     }
   }
 </style>

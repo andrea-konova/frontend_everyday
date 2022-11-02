@@ -55,7 +55,7 @@
       }
     }
   }
-  @media screen and ( max-width: 576px ) {
+  @media screen and ( max-width: 760px ) {
     .v-header {
       &__container {
         padding: 30px 0;
