@@ -1,19 +1,18 @@
 <template>
   <div class="v-countries-item">
     <div class="v-countries-item__image-wrap">
-      <!-- <img v-bind:src=" require(`../assets/images/products/${product_data.image}`) " alt="img" class="v-countries-item__image"> -->
-      <img src="../assets/images/Germany.png" alt="Germany" class="v-countries-item__image">
+      <!-- <img :src=" require(`${country_data.flags.png}`) " alt="img" class="v-countries-item__image"> -->
     </div>
     <div class="v-countries-item__content-wrap">
-      <h3 class="v-countries-item__title">{{product_data.name}}</h3>
+      <h3 class="v-countries-item__title">{{country_data.name.official}}</h3>
       <p class="v-countries-item__text">Population: 
-        <span class="v-countries-item__text--light">{{product_data.price}}</span>
+        <span class="v-countries-item__text--light">{{country_data.population}}</span>
       </p>
       <p class="v-countries-item__text">Region: 
-        <span class="v-countries-item__text--light">{{product_data.price}}</span>
+        <span class="v-countries-item__text--light">{{country_data.region}}</span>
       </p>
       <p class="v-countries-item__text">Capital: 
-        <span class="v-countries-item__text--light">{{product_data.price}}</span>
+        <span class="v-countries-item__text--light">{{country_data.capital[0]}}</span>
       </p>
     </div>
   </div>
@@ -23,18 +22,14 @@
   export default {
     name: 'v-countries-item',
     props: {
-      product_data: {
+      country_data: {
         type: Object,
         default() {
           return {}
         }
       }
     },
-    methods: {
-      addToCart() {
-        this.$emit('addToCart', this.product_data);
-      }
-    }
+    methods: {}
   }
 </script>
 
