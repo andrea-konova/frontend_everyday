@@ -12,7 +12,7 @@
         <span class="v-countries-item__text--light">{{country_data.region}}</span>
       </p>
       <p class="v-countries-item__text">Capital: 
-        <span class="v-countries-item__text--light">{{country_data.capital[0]}}</span>
+        <span v-if="country_data.capital" class="v-countries-item__text--light">{{country_data.capital[0]}}</span>
       </p>
     </div>
   </div>
@@ -28,8 +28,7 @@
           return {}
         }
       }
-    },
-    methods: {}
+    }
   }
 </script>
 

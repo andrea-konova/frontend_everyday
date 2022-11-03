@@ -1,8 +1,16 @@
 <template>
   <div class="v-countries">
+    <div class="v-countries__navigation-row">
+      <v-search-field/>
+      <v-select
+        :options="options"
+        @select="sortByOption"
+        :selected="selected"
+      />
+    </div>
     <div class="v-countries-wrap">
       <v-countries-item
-        v-for="country in COUNTRIES"
+        v-for="country in filteredCountries"
         :key="country.article"
         :country_data="country"
       />
@@ -12,28 +20,55 @@
 
 <script>
   import vCountriesItem from './v-countries-item.vue';
+  import vSelect from "../components/v-select.vue";
+  import vSearchField from "../components/v-search-field.vue";
   import { mapActions, mapGetters } from 'vuex';
 
   export default {
     name: 'v-countries',
     components: {
+      vSelect,
+      vSearchField,
       vCountriesItem
     },
     data() {
       return {
-        sortedProducts: [],
-        
+        options: [
+          {name: 'Africa', value: 'Africa'},
+          {name: 'America', value: 'Americas'},
+          {name: 'Asia', value: 'Asia'},
+          {name: 'Europe', value: 'Europe'},
+          {name: 'Oceania', value: 'Oceania'}
+        ],
+        selected: 'Filter by Region',
+        sortedCountries: []
       }
     },
     computed: {
       ...mapGetters([
         'COUNTRIES'
       ]),
+      filteredCountries() {
+        if (this.sortedCountries.length) {
+          return this.sortedCountries;
+        } else {
+          return this.COUNTRIES;
+        }
+      }
     },
     methods: {
       ...mapActions([
         'GET_COUNTRIES_FROM_API'
-      ])
+      ]),
+      sortByOption(option) {
+        this.selected = option.name;
+        this.sortedCountries = [];
+        this.COUNTRIES.map(item => {
+          if (item.region === option.value) {
+            this.sortedCountries.push(item);
+          }
+        })
+      }
     },
     mounted() {
       this.GET_COUNTRIES_FROM_API();
@@ -53,6 +88,14 @@
       gap: 75px;
       margin: 0 auto;
       padding: 0 0 45px;
+    }
+    &__navigation-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 95%;
+      max-width: 1280px;
+      margin: 48px auto;
     }
   }
   @media screen and ( max-width: 992px ) {
@@ -95,6 +138,10 @@
         margin: 0 auto 30px;
         width: 100%;
         max-width: 830px;
+      }
+      &__navigation-row {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   }
