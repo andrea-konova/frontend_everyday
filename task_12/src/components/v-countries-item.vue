@@ -1,21 +1,25 @@
 <template>
-  <div class="v-countries-item">
-    <div class="v-countries-item__image-wrap">
-      <!-- <img :src=" require(`${country_data.flags.png}`) " alt="img" class="v-countries-item__image"> -->
+  <router-link to="/detail" class="v-menu__item-link">
+    <div 
+      class="v-countries-item"
+      @click="getCountryFromApi">
+      <div class="v-countries-item__image-wrap">
+        <img :src="country_data.flags.png" alt="img" class="v-countries-item__image">
+      </div>
+      <div class="v-countries-item__content-wrap">
+        <h3 class="v-countries-item__title">{{country_data.name.official}}</h3>
+        <p class="v-countries-item__text">Population: 
+          <span class="v-countries-item__text--light">{{country_data.population}}</span>
+        </p>
+        <p class="v-countries-item__text">Region: 
+          <span class="v-countries-item__text--light">{{country_data.region}}</span>
+        </p>
+        <p class="v-countries-item__text">Capital: 
+          <span v-if="country_data.capital" class="v-countries-item__text--light">{{country_data.capital[0]}}</span>
+        </p>
+      </div>
     </div>
-    <div class="v-countries-item__content-wrap">
-      <h3 class="v-countries-item__title">{{country_data.name.official}}</h3>
-      <p class="v-countries-item__text">Population: 
-        <span class="v-countries-item__text--light">{{country_data.population}}</span>
-      </p>
-      <p class="v-countries-item__text">Region: 
-        <span class="v-countries-item__text--light">{{country_data.region}}</span>
-      </p>
-      <p class="v-countries-item__text">Capital: 
-        <span v-if="country_data.capital" class="v-countries-item__text--light">{{country_data.capital[0]}}</span>
-      </p>
-    </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -27,6 +31,11 @@
         default() {
           return {}
         }
+      }
+    },
+    methods: {
+      getCountryFromApi() {
+        this.$emit('getCountryFromApi', this.country_data.name.common);
       }
     }
   }

@@ -13,6 +13,7 @@
         v-for="country in filteredCountries"
         :key="country.article"
         :country_data="country"
+        @getCountryFromApi="getCountryFromApi"
       />
     </div>
   </div>
@@ -58,7 +59,8 @@
     },
     methods: {
       ...mapActions([
-        'GET_COUNTRIES_FROM_API'
+        'GET_COUNTRIES_FROM_API',
+        'GET_COUNTRY_FROM_API'
       ]),
       sortByOption(option) {
         this.selected = option.name;
@@ -68,10 +70,14 @@
             this.sortedCountries.push(item);
           }
         })
+      },
+      getCountryFromApi(name) {
+        this.GET_COUNTRY_FROM_API(name);
       }
     },
     mounted() {
       this.GET_COUNTRIES_FROM_API();
+      // this.GET_COUNTRY_FROM_API();
     }
   }
 </script>
