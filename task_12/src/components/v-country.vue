@@ -1,7 +1,7 @@
 <template>
   <div class="v-country">
     <router-link to="/">
-      <button 
+      <button
         v-if="!THEME"
         class="v-country__button v-country__button--dark">
         Back
@@ -188,5 +188,85 @@
   }
   .v-country__button--dark::before {
     background-image: url('../assets/images/icons/arrow-left-dark.png');
+  }
+  @media screen and ( max-width: 992px ) {
+    .v-country {
+      &__info {
+        flex-direction: column;
+        padding-bottom: 90px;
+      }
+      &__image {
+        &-wrap {
+          margin-bottom: 44px;
+          width: 560px;
+        }
+      }
+      &__content-wrap {
+        width: 560px;
+      }
+    }
+  }
+  @media screen and ( max-width: 760px ) {
+    .v-country {
+      &__info {
+        margin-top: 60px;
+        padding-bottom: 60px;
+      }
+      &__button {
+        margin-top: 40px;
+        padding: 6px 24px;
+        font-size: 14px;
+        &::before {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      &__image {
+        &-wrap {
+          width: 500px;
+          height: 320px;
+        }
+      }
+      &__content-wrap {
+        width: 95%;
+      }
+      &__title {
+        margin: 0 0 16px;
+        font-size: 22px;
+        line-height: 30px;
+      }
+      &__text {
+        font-size: 14px;
+        line-height: 32px;
+      }
+      &-button {
+        font-size: 12px;
+      }
+      &__content-row--border {
+        margin: 35px 0 0;
+      }
+    }
+  }
+  @media screen and ( max-width: 576px ) {
+    .v-country {
+      &__image {
+        &-wrap {
+          width: 95%;
+          max-width: 320px;
+          height: 230px;
+        }
+      }
+      &__content-wrap {
+        width: 95%;
+      }
+      &__content-row {
+        flex-direction: column;
+      }
+      &__content-column {
+        &:first-child {
+          margin-bottom: 32px;
+        }
+      }
+    }
   }
 </style>
