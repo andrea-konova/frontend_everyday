@@ -77,7 +77,6 @@
     },
     mounted() {
       this.GET_COUNTRIES_FROM_API();
-      // this.GET_COUNTRY_FROM_API();
     }
   }
 </script>

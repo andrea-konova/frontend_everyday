@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     countries: [],
-    country: []
+    country: [],
+    darkTheme: true
   },
   mutations: {
     SET_COUNTRIES_TO_STATE: (state, countries) => {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     SET_COUNTRY_TO_STATE: (state, country) => {
       state.country = country;
+    },
+    SET_THEME: (state, data) => {
+      state.darkTheme = data;
     }
   },
   actions: {
@@ -52,6 +56,9 @@ export default new Vuex.Store({
     },
     COUNTRY(state) {
       return state.country;
+    },
+    THEME(state) {
+      return state.darkTheme;
     }
   }
 })

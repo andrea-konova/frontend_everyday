@@ -1,7 +1,10 @@
 <template>
   <div class="v-search-field">
-    <button class="v-search-field__button">
+    <button
+      v-if="!THEME"
+      class="v-search-field__button v-search-field__button--dark">
     </button>
+    <button v-else class="v-search-field__button"></button>
     <input
       type="text"
       class="v-search-field__input"
@@ -13,6 +16,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'v-search-field',
@@ -20,7 +24,12 @@
       return {
         searchValue: ''
       }
-    }
+    },
+    computed: {
+      ...mapGetters([
+        'THEME'
+      ])
+    },
   }
 </script>
 
@@ -32,7 +41,7 @@
     margin: 0 0 4px;
     width: 480px;
     padding: 18px 32px;
-    background-color: $white-bg;
+    background-color: var(--white-bg);
     box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
     border-radius: 5px;
     &__button {
@@ -50,10 +59,16 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
-      color: $search-text;
       border: none;
       background-color: transparent;
+      color: var(--search-text);
+      &::placeholder {
+        color: var(--search-text);
+      }
     }
+  }
+  .v-search-field__button--dark {
+    background-image: url('../assets/images/icons/search-dark.png');
   }
   @media screen and ( max-width: 992px ) {
     .v-search-field {

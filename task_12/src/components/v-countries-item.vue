@@ -7,7 +7,8 @@
         <img :src="country_data.flags.png" alt="img" class="v-countries-item__image">
       </div>
       <div class="v-countries-item__content-wrap">
-        <h3 class="v-countries-item__title">{{country_data.name.official}}</h3>
+        <h3 v-if="country_data.name.common" class="v-countries-item__title">{{country_data.name.common}}</h3>
+        <h3 v-else class="v-countries-item__title">{{country_data.name.official}}</h3>
         <p class="v-countries-item__text">Population: 
           <span class="v-countries-item__text--light">{{country_data.population}}</span>
         </p>
@@ -35,7 +36,7 @@
     },
     methods: {
       getCountryFromApi() {
-        this.$emit('getCountryFromApi', this.country_data.name.common);
+        this.$emit('getCountryFromApi', this.country_data.name.official);
       }
     }
   }
@@ -48,7 +49,7 @@
     margin: 0;
     width: 100%;
     max-width: 264px;
-    background-color: $white-bg;
+    background-color: var(--white-bg);
     border-radius: 5px;
     overflow: hidden;
     &__content-wrap {
@@ -56,7 +57,7 @@
       flex-direction: column;
       align-items: flex-start;
       padding: 24px 24px 46px;
-      color: $dark-text;
+      color: var(--dark-text);
       text-align: left;
     }
     &__image {

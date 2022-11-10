@@ -1,14 +1,20 @@
 <template>
   <div class="v-country">
     <router-link to="/">
-      <button class="v-country__button">Back</button>
+      <button 
+        v-if="!THEME"
+        class="v-country__button v-country__button--dark">
+        Back
+      </button>
+      <button v-else class="v-country__button">Back</button>
     </router-link>
     <div class="v-country__info">
       <div class="v-country__image-wrap">
         <img v-if="COUNTRY.flags" :src="COUNTRY.flags.png" alt="img" class="v-country__image">
       </div>
       <div class="v-country__content-wrap">
-        <h2 class="v-country__title">{{COUNTRY.name.common}}</h2>
+        <h2 v-if="COUNTRY.name.common" class="v-country__title">{{COUNTRY.name.common}}</h2>
+        <h2 v-else class="v-country__title">{{COUNTRY.name.official}}</h2>
         <div class="v-country__content-row">
           <div class="v-country__content-column">
             <p class="v-country__text">Native Name: 
@@ -41,7 +47,11 @@
         </div>
         <div class="v-country__content-row--border">
           <p class="v-country__text v-country__text--border">Border Countries:</p>
-          <v-country-button/>
+          <v-country-button
+            v-for="border in COUNTRY.borders"
+            :key="border.article"
+            :borders_data="border"
+          />
         </div>
       </div>
     </div>
@@ -59,7 +69,8 @@
     },
     computed: {
       ...mapGetters([
-        'COUNTRY'
+        'COUNTRY',
+        'THEME'
       ])
     },
     methods: {
@@ -67,6 +78,7 @@
       showCurrencies(COUNTRY) {
         let currencies = COUNTRY.currencies;
         let currenciesName = (Object.keys(currencies));
+        // console.log(COUNTRY.currencies);
         return currenciesName[0];
       },
       showLanguages(COUNTRY) {
@@ -86,17 +98,20 @@
     width: 95%;
     max-width: 1280px;
     margin: 0 auto;
+    color: var(--dark-text);
     &__button {
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 80px;
       padding: 10px 32px;
       border: none;
-      background-color: transparent;
+      border-radius: 6px;
       font-weight: 300;
       font-size: 16px;
       line-height: 20px;
-      color: $dark-text;
+      background: var(--white-bg);
+      color: var(--dark-text);
       cursor: pointer;
       &::before {
         content: '';
@@ -113,6 +128,7 @@
       align-items: center;
       justify-content: space-between;
       margin-top: 90px;
+      padding-bottom: 200px;
     }
     &__image {
       width: 100%;
@@ -130,7 +146,7 @@
     &__content-wrap {
       width: 45%;
       max-width: 600px;
-      color: $dark-text;
+      color: var(--dark-text);
     }
     &__title {
       margin: 0 0 23px;
@@ -146,8 +162,11 @@
         justify-content: space-between;
         &--border {
           display: flex;
+          align-items: center;
+          flex-wrap: wrap;
           margin: 70px 0 0;
           text-align: left;
+          width: 100%;
         }
       }
       &-column {
@@ -163,8 +182,11 @@
         font-weight: 300;
       }
       &--border {
-        margin-right: 15px;
+        margin: 0 15px 10px 0;
       }
     }
+  }
+  .v-country__button--dark::before {
+    background-image: url('../assets/images/icons/arrow-left-dark.png');
   }
 </style>

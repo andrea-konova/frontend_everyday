@@ -20,6 +20,6 @@
 
 <style lang="scss">
   .home {
-    background-color: $light-bg;
+    background-color: var(--light-bg);
   }
 </style>

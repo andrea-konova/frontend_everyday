@@ -1,6 +1,12 @@
 <template>
   <div class="v-select">
     <p
+      v-if="!THEME"
+      class="v-select__title v-select__title--dark"
+      @click="areOptionsVisible = !areOptionsVisible"
+    >{{selected}}</p>
+    <p
+      v-else
       class="v-select__title"
       @click="areOptionsVisible = !areOptionsVisible"
     >{{selected}}</p>
@@ -21,6 +27,8 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+
   export default {
     name: 'v-select',
     props: {
@@ -39,6 +47,11 @@
       return {
         areOptionsVisible: false
       }
+    },
+    computed: {
+      ...mapGetters([
+        'THEME'
+      ])
     },
     methods: {
       selectOption(option) {
@@ -66,7 +79,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: $dark-text;
+    color: var(--dark-text);
     cursor: pointer;
     &__title {
       display: flex;
@@ -75,7 +88,7 @@
       margin: 0 0 4px;
       padding: 18px 24px;
       border-radius: 5px;
-      background-color: $white-bg;
+      background-color: var(--white-bg);
       box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
       &::after {
         content: '';
@@ -87,7 +100,7 @@
       }
     }
     &__options {
-      background-color: $white-bg;
+      background-color: var(--white-bg);
       padding: 16px 24px;
       border-radius: 5px;
       box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -102,6 +115,9 @@
         }
       }
     }
+  }
+  .v-select__title--dark::after {
+    background-image: url('../assets/images/icons/select-arrow-dark.svg');
   }
   @media screen and ( max-width: 992px ) {
     .v-select {

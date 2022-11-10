@@ -18,3 +18,9 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .detail {
+    background-color: var(--light-bg);
+  }
+</style>
