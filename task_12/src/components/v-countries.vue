@@ -13,7 +13,6 @@
         v-for="country in filteredCountries"
         :key="country.article"
         :country_data="country"
-        @getCountryFromApi="getCountryFromApi"
       />
     </div>
   </div>
@@ -47,7 +46,8 @@
     },
     computed: {
       ...mapGetters([
-        'COUNTRIES'
+        'COUNTRIES',
+        'SEARCH_VALUE'
       ]),
       filteredCountries() {
         if (this.sortedCountries.length) {
@@ -59,8 +59,7 @@
     },
     methods: {
       ...mapActions([
-        'GET_COUNTRIES_FROM_API',
-        'GET_COUNTRY_FROM_API'
+        'GET_COUNTRIES_FROM_API'
       ]),
       sortByOption(option) {
         this.selected = option.name;
@@ -71,8 +70,21 @@
           }
         })
       },
-      getCountryFromApi(name) {
-        this.GET_COUNTRY_FROM_API(name);
+      sortBySearchValue(value) {
+        this.sortedCountries = [];
+        if (value) {
+          this.sortedCountries =  this.COUNTRIES.filter(item => {
+            return item.name.common.toLowerCase().includes(value.toLowerCase());
+          })
+          if (this.sortedCountries.length === 0) {
+            alert('No such country found! Try changing your request!')
+          }
+        }
+      }
+    },
+    watch: {
+      SEARCH_VALUE() {
+        this.sortBySearchValue(this.SEARCH_VALUE);
       }
     },
     mounted() {

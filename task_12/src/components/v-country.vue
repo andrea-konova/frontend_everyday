@@ -60,7 +60,7 @@
 
 <script>
   import vCountryButton from "../components/v-country-button.vue";
-  import { mapGetters } from 'vuex';
+  import { mapActions, mapGetters } from 'vuex';
 
   export default {
     name: 'v-country',
@@ -70,10 +70,14 @@
     computed: {
       ...mapGetters([
         'COUNTRY',
+        // 'COUNTRY_NAME',
         'THEME'
       ])
     },
     methods: {
+      ...mapActions([
+        'GET_COUNTRY_FROM_API'
+      ]),
       // нужно будет разобраться с выводом валюты
       showCurrencies(COUNTRY) {
         let currencies = COUNTRY.currencies;
@@ -89,6 +93,9 @@
         }
         return lang.join(', ');
       }
+    },
+    mounted() {
+      this.GET_COUNTRY_FROM_API(localStorage.name);
     }
   }
 </script>

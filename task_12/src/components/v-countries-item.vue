@@ -2,7 +2,7 @@
   <router-link to="/detail" class="v-menu__item-link">
     <div 
       class="v-countries-item"
-      @click="getCountryFromApi">
+      @click="getCountryName">
       <div class="v-countries-item__image-wrap">
         <img :src="country_data.flags.png" alt="img" class="v-countries-item__image">
       </div>
@@ -35,8 +35,10 @@
       }
     },
     methods: {
-      getCountryFromApi() {
-        this.$emit('getCountryFromApi', this.country_data.name.official);
+      getCountryName() {
+        let name = this.country_data.name.official;
+        // this.$store.commit('SET_COUNTRY_NAME', name);
+        localStorage.name = name;
       }
     }
   }

@@ -6,11 +6,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    searchValue: '',
     countries: [],
     country: [],
-    darkTheme: true
+    darkTheme: true,
+    // countryName: ''
   },
   mutations: {
+    SET_SEARCH_VALUE: (state, value) => {
+      state.searchValue = value;
+    },
     SET_COUNTRIES_TO_STATE: (state, countries) => {
       state.countries = countries;
     },
@@ -19,7 +24,10 @@ export default new Vuex.Store({
     },
     SET_THEME: (state, data) => {
       state.darkTheme = data;
-    }
+    },
+    // SET_COUNTRY_NAME: (state, name) => {
+    //   state.countryName = name;
+    // }
   },
   actions: {
     GET_COUNTRIES_FROM_API({commit}) {
@@ -36,7 +44,6 @@ export default new Vuex.Store({
         })
     },
     GET_COUNTRY_FROM_API({commit}, name) {
-      // this.country = [];
       return axios(`https://restcountries.com/v3.1/name/${name}`, {
         method: 'GET'
       })
@@ -48,9 +55,15 @@ export default new Vuex.Store({
           console.log(error);
           return error;
         })
+    },
+    GET_SEARCH_VALUE({commit}, value) {
+      commit('SET_SEARCH_VALUE', value);
     }
   },
   getters: {
+    SEARCH_VALUE(state) {
+      return state.searchValue;
+    },
     COUNTRIES(state) {
       return state.countries;
     },
@@ -59,6 +72,9 @@ export default new Vuex.Store({
     },
     THEME(state) {
       return state.darkTheme;
-    }
+    },
+    // COUNTRY_NAME(state) {
+    //   return state.countryName;
+    // }
   }
 })

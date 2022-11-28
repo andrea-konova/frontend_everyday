@@ -2,9 +2,14 @@
   <div class="v-search-field">
     <button
       v-if="!THEME"
-      class="v-search-field__button v-search-field__button--dark">
+      class="v-search-field__button v-search-field__button--dark"
+      @click="search(searchValue)">
     </button>
-    <button v-else class="v-search-field__button"></button>
+    <button
+      v-else
+      class="v-search-field__button"
+      @click="search(searchValue)">
+    </button>
     <input
       type="text"
       class="v-search-field__input"
@@ -16,7 +21,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+  import { mapActions, mapGetters } from 'vuex';
 
   export default {
     name: 'v-search-field',
@@ -27,9 +32,17 @@
     },
     computed: {
       ...mapGetters([
-        'THEME'
+        'THEME',
       ])
     },
+    methods: {
+      ...mapActions ([
+        'GET_SEARCH_VALUE'
+      ]),
+      search(value) {
+        this.GET_SEARCH_VALUE(value);
+      }
+    }
   }
 </script>
 

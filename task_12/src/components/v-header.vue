@@ -32,8 +32,6 @@
 
         let root = document.documentElement;
 
-        console.log(THEME);
-
         const changeTheme = () => {
           if (!THEME) {
             darkText = '#111517',
